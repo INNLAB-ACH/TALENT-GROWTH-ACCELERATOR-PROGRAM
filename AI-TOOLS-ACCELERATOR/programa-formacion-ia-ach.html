@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Formación IA — ACH Colombia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="reporte">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="report-header__top">
+      <div class="report-header__logo">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FwYV8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDExMjIuMTUgMjIwLjg0Ij4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMzAuMy4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjMgQnVpbGQgMTgyKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6ICNmZmZmZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJDYXBhXzEiPgogICAgPGc+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNi4zOSwxNzIuMjdWMjUuMTdoMTkuMzV2MTQ3LjA5aC0xOS4zNVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjguNTEsMTcyLjI3VjI1LjE3aDE2LjE5bDg0LjUsMTE4Ljg2LTcuMzEuNzlWMjUuMTdoMTkuNTV2MTQ3LjA5aC0xNi4xOUw4MS4xNSw1Mi42Mmw2LjcxLS43OXYxMjAuNDRoLTE5LjM1WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMTQuMjIsMTcyLjI3VjI1LjE3aDE2LjE5bDg0LjUsMTE4Ljg2LTcuMzEuNzlWMjUuMTdoMTkuNTV2MTQ3LjA5aC0xNi4xOWwtODQuMTEtMTE5LjY1LDYuNzEtLjc5djEyMC40NGgtMTkuMzVaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTM1OS45MywxNzIuMjdWMjUuMTdoMTkuMzV2MTI5LjMyaDY0LjU2djE3Ljc3aC04My45MVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDUxLjM0LDE3Mi4yN2w1Mi43Mi0xNDcuMDloMjIuOWw1Mi43MiwxNDcuMDloLTIwLjczbC0xMi4wNC0zNC41NWgtNjIuNzlsLTEyLjA0LDM0LjU1aC0yMC43M1pNNDkwLjI0LDExOS45NWg1MC41NGwtMjguMDQtODAuNzVoNS41M2wtMjguMDQsODAuNzVaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTU5OC4yNCwxNzIuMjdWMjUuMTdoNjEuOGM4LjgyLDAsMTYuNDIsMS41OCwyMi44LDQuNzQsNi4zOCwzLjE2LDExLjMyLDcuNiwxNC44MSwxMy4zMywzLjQ5LDUuNzMsNS4yMywxMi41NCw1LjIzLDIwLjQzLDAsNy4yNC0xLjg4LDEzLjc5LTUuNjMsMTkuNjUtMy43NSw1Ljg2LTkuMjUsMTAuNDMtMTYuNDksMTMuNzJsLS4yLTcuMzFjNi4zMiwyLjM3LDExLjU1LDUuNSwxNS43LDkuMzgsNC4xNSwzLjg4LDcuMjcsOC4zNiw5LjM4LDEzLjQzLDIuMSw1LjA3LDMuMTYsMTAuNDMsMy4xNiwxNi4wOSwwLDEzLjU2LTQuMzQsMjQuMjItMTMuMDMsMzEuOTktOC42OSw3Ljc3LTIwLjUzLDExLjY1LTM1LjU0LDExLjY1aC02MlpNNjE3LjU5LDg1LjU5aDQyLjA1YzcuMTEsMCwxMi44My0yLjA3LDE3LjE4LTYuMjIsNC4zNC00LjE1LDYuNTItOS40NCw2LjUyLTE1Ljg5cy0yLjE3LTExLjg1LTYuNTItMTUuNGMtNC4zNC0zLjU1LTEwLjA3LTUuMzMtMTcuMTgtNS4zM2gtNDIuMDV2NDIuODRaTTYxNy41OSwxNTQuNWg0My40NGM4LjU1LDAsMTUuNC0yLjMsMjAuNTMtNi45MSw1LjEzLTQuNjEsNy43LTEwLjg2LDcuNy0xOC43NnMtMi41Ny0xNC4xOC03LjctMTguODZjLTUuMTMtNC42Ny0xMS45OC03LjAxLTIwLjUzLTcuMDFoLTQzLjQ0djUxLjUzWiIvPgogICAgICA8L2c+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MzEuNiw5NC4zN2MtMy4wNywwLTUuOTEtLjU1LTguNDktMS42Ni0yLjU5LTEuMTEtNC44NS0yLjY4LTYuNzctNC43LTEuOTMtMi4wMi0zLjQyLTQuNC00LjQ3LTcuMTItMS4wNS0yLjcyLTEuNTgtNS43LTEuNTgtOC45M3MuNTMtNi4yNywxLjU4LTguOTljMS4wNS0yLjcyLDIuNTMtNS4xLDQuNDQtNy4xMiwxLjkxLTIuMDIsNC4xNi0zLjU5LDYuNzctNC43LDIuNjEtMS4xMSw1LjQ1LTEuNjYsOC41Mi0xLjY2czUuNjkuNTMsOC4wOSwxLjU4LDQuNDIsMi40MSw2LjA3LDQuMDljMS42NSwxLjY3LDIuODMsMy40NiwzLjUzLDUuMzdsLTUuMjUsMi4zOWMtMS4wMS0yLjQxLTIuNTktNC4zNy00LjczLTUuODctMi4xNC0xLjUtNC43MS0yLjI1LTcuNzEtMi4yNXMtNS43My43Mi04LjA5LDIuMTZjLTIuMzUsMS40NC00LjE5LDMuNDQtNS41Miw2LjAxLTEuMzIsMi41Ny0xLjk4LDUuNTctMS45OCw4Ljk5cy42Niw2LjM2LDEuOTgsOC45M2MxLjMyLDIuNTcsMy4xNiw0LjU3LDUuNTIsNi4wMSwyLjM1LDEuNDQsNS4wNSwyLjE2LDguMDksMi4xNnM1LjU3LS43NSw3LjcxLTIuMjVjMi4xNC0xLjUsMy43Mi0zLjQ1LDQuNzMtNS44N2w1LjI1LDIuMzljLS43LDEuOTEtMS44OCwzLjctMy41Myw1LjM3LTEuNjUsMS42Ny0zLjY4LDMuMDQtNi4wNyw0LjA5cy01LjA5LDEuNTgtOC4wOSwxLjU4WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04NzAuMzEsOTQuMzdjLTMuMDQsMC01Ljc0LS43Mi04LjEyLTIuMTYtMi4zNy0xLjQ0LTQuMjQtMy40Mi01LjYtNS45My0xLjM2LTIuNTEtMi4wNC01LjMyLTIuMDQtOC40NHMuNjctNS45NiwyLjAxLTguNDFjMS4zNC0yLjQ1LDMuMTctNC4zOSw1LjQ5LTUuODEsMi4zMi0xLjQyLDQuOTEtMi4xMyw3Ljc5LTIuMTMsMi4zMywwLDQuNDEuNDIsNi4yMiwxLjI2LDEuODEuODQsMy4zNSwxLjk3LDQuNjEsMy4zOSwxLjI2LDEuNDIsMi4yNCwzLjA0LDIuOTIsNC44NS42OCwxLjgxLDEuMDIsMy42OSwxLjAyLDUuNjMsMCwuNDMtLjAzLjkxLS4wOSwxLjQzcy0uMTMsMS4wMi0uMjEsMS40OWgtMjUuOHYtNC42N2gyMi42NWwtMi41NywyLjFjLjM1LTIuMDIuMTYtMy44My0uNTgtNS40My0uNzQtMS41OS0xLjgzLTIuODYtMy4yNy0zLjc5LTEuNDQtLjkzLTMuMDgtMS40LTQuOS0xLjRzLTMuNS40Ny01LjAyLDEuNGMtMS41Mi45My0yLjcsMi4yNy0zLjUzLDQtLjg0LDEuNzMtMS4xOCwzLjc5LTEuMDIsNi4xNi0uMTYsMi4zLjIsNC4zMSwxLjA4LDYuMDQuODgsMS43MywyLjEyLDMuMDcsMy43NCw0LjAzLDEuNjEuOTUsMy4zOCwxLjQzLDUuMjgsMS40MywyLjEsMCwzLjg3LS40OSw1LjMxLTEuNDYsMS40NC0uOTcsMi42MS0yLjIyLDMuNS0zLjc0bDQuNTUsMi4zM2MtLjYyLDEuNDQtMS41OSwyLjc1LTIuODksMy45NC0xLjMsMS4xOS0yLjg0LDIuMTMtNC42MSwyLjgzLTEuNzcuNy0zLjc1LDEuMDUtNS45MiwxLjA1WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04OTEuNjcsOTMuNjd2LTMxLjQ3aDUuMzF2Ni4xM2wtLjg4LS41M2MuNzgtMS45OSwyLjAzLTMuNTMsMy43Ny00LjY0LDEuNzMtMS4xMSwzLjc3LTEuNjYsNi4xLTEuNjZzNC4yNy41MSw2LjA0LDEuNTJjMS43NywxLjAxLDMuMTcsMi40MSw0LjIsNC4yczEuNTUsMy44MSwxLjU1LDYuMDd2MjAuMzdoLTUuNDl2LTE4LjYyYzAtMS43NS0uMzEtMy4yMy0uOTMtNC40NC0uNjItMS4yMS0xLjUxLTIuMTUtMi42Ni0yLjgzcy0yLjQ2LTEuMDItMy45NC0xLjAyLTIuNzkuMzQtMy45NCwxLjAyYy0xLjE1LjY4LTIuMDUsMS42My0yLjcxLDIuODZzLS45OSwyLjctLjk5LDQuNDF2MTguNjJoLTUuNDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTkzOC4zMSw5NC4wMmMtMy4wOCwwLTUuNDQtLjg4LTcuMDktMi42My0xLjY1LTEuNzUtMi40OC00LjIyLTIuNDgtNy40MXYtMTYuNThoLTUuNzJ2LTUuMmgxLjE3YzEuNCwwLDIuNTEtLjQzLDMuMzMtMS4yOC44Mi0uODYsMS4yMy0xLjk5LDEuMjMtMy4zOXYtMi41N2g1LjQzdjcuMjRoNy4wNnY1LjJoLTcuMDZ2MTYuNGMwLDEuMDUuMTYsMS45Ny41LDIuNzQuMzMuNzguODgsMS4zOSwxLjY2LDEuODQuNzguNDUsMS44MS42NywzLjA5LjY3LjI3LDAsLjYxLS4wMiwxLjAyLS4wNnMuNzktLjA4LDEuMTQtLjEydjQuNzljLS41MS4xMi0xLjA3LjItMS42OS4yNi0uNjIuMDYtMS4xNS4wOS0xLjU4LjA5WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05NDguNjUsOTMuNjd2LTMxLjQ3aDUuMzF2NS43OGwtLjU4LS44MmMuNzQtMS43OSwxLjg3LTMuMTIsMy4zOS00czMuMzctMS4zMSw1LjU1LTEuMzFoMS45M3Y1LjE0aC0yLjc0Yy0yLjIyLDAtNC4wMS42OS01LjM3LDIuMDctMS4zNiwxLjM4LTIuMDQsMy4zNC0yLjA0LDUuODd2MTguNzRoLTUuNDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTk4NC4wMiw5NC4zN2MtMy4wNCwwLTUuNzgtLjcxLTguMjMtMi4xMy0yLjQ1LTEuNDItNC40LTMuMzgtNS44NC01Ljg3LTEuNDQtMi40OS0yLjE2LTUuMzEtMi4xNi04LjQ3cy43MS01Ljk1LDIuMTMtOC40MWMxLjQyLTIuNDUsMy4zNi00LjQsNS44MS01Ljg0LDIuNDUtMS40NCw1LjIxLTIuMTYsOC4yOS0yLjE2czUuNzguNzEsOC4yMywyLjEzYzIuNDUsMS40Miw0LjM5LDMuMzYsNS44MSw1LjgxLDEuNDIsMi40NSwyLjEzLDUuMjcsMi4xMyw4LjQ2cy0uNzQsNi4wMi0yLjIyLDguNDljLTEuNDgsMi40Ny0zLjQ0LDQuNDItNS44Nyw1Ljg0LTIuNDMsMS40Mi01LjEzLDIuMTMtOC4wOCwyLjEzWk05ODQuMDIsODkuMTJjMS45NSwwLDMuNzEtLjQ5LDUuMjgtMS40NnMyLjgyLTIuMzIsMy43NC00LjAzYy45MS0xLjcxLDEuMzctMy42MiwxLjM3LTUuNzJzLS40Ni00LjA0LTEuMzctNS42OS0yLjE2LTIuOTgtMy43NC0zLjk3LTMuMzQtMS40OS01LjI4LTEuNDktMy43Ny41LTUuMzQsMS40OS0yLjgzLDIuMzItMy43NywzLjk3LTEuNCwzLjU1LTEuNCw1LjY5LjQ3LDQuMDEsMS40LDUuNzJjLjkzLDEuNzEsMi4xOSwzLjA2LDMuNzcsNC4wM3MzLjM2LDEuNDYsNS4zNCwxLjQ2WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDMxLjY2LDk0LjM3Yy0yLjk2LDAtNS42Mi0uNzItNy45Ny0yLjE2LTIuMzYtMS40NC00LjIxLTMuNDEtNS41OC01LjktMS4zNi0yLjQ5LTIuMDQtNS4yNy0yLjA0LTguMzVzLjY4LTUuOTYsMi4wNC04LjQ0YzEuMzYtMi40NywzLjIyLTQuNDMsNS41OC01Ljg3LDIuMzUtMS40NCw1LjAxLTIuMTYsNy45Ny0yLjE2LDIuNjEsMCw0LjkyLjU1LDYuOTUsMS42NiwyLjAyLDEuMTEsMy42MiwyLjYsNC43OSw0LjQ3bC0uODgsMS4zNHYtMTkuNWg1LjQ5djQ0LjE5aC01LjMxdi02LjcxbC43LjkzYy0xLjA5LDIuMDYtMi42OCwzLjY2LTQuNzYsNC43OS0yLjA4LDEuMTMtNC40MSwxLjY5LTYuOTgsMS42OVpNMTAzMi4xMyw4OS4xMmMxLjk4LDAsMy43Ni0uNDksNS4zMS0xLjQ2czIuNzktMi4zMSwzLjcxLTRjLjkxLTEuNjksMS4zNy0zLjU5LDEuMzctNS42OXMtLjQ2LTQuMDYtMS4zNy01Ljc1Yy0uOTItMS42OS0yLjE1LTMuMDMtMy43MS00LTEuNTYtLjk3LTMuMzMtMS40Ni01LjMxLTEuNDZzLTMuNzEuNS01LjI4LDEuNDktMi44MSwyLjMyLTMuNzEsMy45N2MtLjksMS42NS0xLjM0LDMuNTctMS4zNCw1Ljc1cy40NSw0LDEuMzQsNS42OWMuODksMS42OSwyLjEyLDMuMDMsMy42OCw0czMuMzMsMS40Niw1LjMxLDEuNDZaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEwNzAuODksOTQuMzdjLTMuMDQsMC01Ljc0LS43Mi04LjEyLTIuMTYtMi4zNy0xLjQ0LTQuMjQtMy40Mi01LjYtNS45My0xLjM2LTIuNTEtMi4wNC01LjMyLTIuMDQtOC40NHMuNjctNS45NiwyLjAxLTguNDFjMS4zNC0yLjQ1LDMuMTctNC4zOSw1LjQ5LTUuODEsMi4zMi0xLjQyLDQuOTEtMi4xMyw3Ljc5LTIuMTMsMi4zMywwLDQuNDEuNDIsNi4yMiwxLjI2LDEuODEuODQsMy4zNSwxLjk3LDQuNjEsMy4zOSwxLjI2LDEuNDIsMi4yNCwzLjA0LDIuOTIsNC44NS42OCwxLjgxLDEuMDIsMy42OSwxLjAyLDUuNjMsMCwuNDMtLjAzLjkxLS4wOSwxLjQzcy0uMTMsMS4wMi0uMjEsMS40OWgtMjUuOHYtNC42N2gyMi42NWwtMi41NywyLjFjLjM1LTIuMDIuMTYtMy44My0uNTgtNS40My0uNzQtMS41OS0xLjgzLTIuODYtMy4yNy0zLjc5LTEuNDQtLjkzLTMuMDgtMS40LTQuOS0xLjRzLTMuNS40Ny01LjAyLDEuNGMtMS41Mi45My0yLjcsMi4yNy0zLjUzLDQtLjg0LDEuNzMtMS4xOCwzLjc5LTEuMDIsNi4xNi0uMTYsMi4zLjIsNC4zMSwxLjA4LDYuMDQuODgsMS43MywyLjEyLDMuMDcsMy43NCw0LjAzLDEuNjEuOTUsMy4zOCwxLjQzLDUuMjgsMS40MywyLjEsMCwzLjg3LS40OSw1LjMxLTEuNDYsMS40NC0uOTcsMi42MS0yLjIyLDMuNS0zLjc0bDQuNTUsMi4zM2MtLjYyLDEuNDQtMS41OSwyLjc1LTIuODksMy45NC0xLjMsMS4xOS0yLjg0LDIuMTMtNC42MSwyLjgzLTEuNzcuNy0zLjc1LDEuMDUtNS45MiwxLjA1WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MTEuNTgsMTYzLjczdi00My40OWg1LjcydjQzLjQ5aC01LjcyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MjYuMzUsMTYzLjczdi0zMS40N2g1LjMxdjYuMTNsLS44OC0uNTNjLjc4LTEuOTksMi4wMy0zLjUzLDMuNzctNC42NCwxLjczLTEuMTEsMy43Ny0xLjY2LDYuMS0xLjY2czQuMjcuNTEsNi4wNCwxLjUyYzEuNzcsMS4wMSwzLjE3LDIuNDEsNC4yLDQuMiwxLjAzLDEuNzksMS41NSwzLjgxLDEuNTUsNi4wN3YyMC4zN2gtNS40OXYtMTguNjJjMC0xLjc1LS4zMS0zLjIzLS45My00LjQ0LS42Mi0xLjIxLTEuNTEtMi4xNS0yLjY2LTIuODMtMS4xNS0uNjgtMi40Ni0xLjAyLTMuOTQtMS4wMnMtMi43OS4zNC0zLjk0LDEuMDJjLTEuMTUuNjgtMi4wNSwxLjYzLTIuNzEsMi44Ni0uNjYsMS4yMy0uOTksMi43LS45OSw0LjQxdjE4LjYyaC01LjQzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04NjAuMiwxNjMuNzN2LTMxLjQ3aDUuMzF2Ni4xM2wtLjg4LS41M2MuNzgtMS45OSwyLjAzLTMuNTMsMy43Ny00LjY0LDEuNzMtMS4xMSwzLjc3LTEuNjYsNi4xLTEuNjZzNC4yNy41MSw2LjA0LDEuNTJjMS43NywxLjAxLDMuMTcsMi40MSw0LjIsNC4yczEuNTUsMy44MSwxLjU1LDYuMDd2MjAuMzdoLTUuNDl2LTE4LjYyYzAtMS43NS0uMzEtMy4yMy0uOTMtNC40NC0uNjItMS4yMS0xLjUxLTIuMTUtMi42Ni0yLjgzcy0yLjQ2LTEuMDItMy45NC0xLjAyLTIuNzkuMzQtMy45NCwxLjAyYy0xLjE1LjY4LTIuMDUsMS42My0yLjcxLDIuODYtLjY2LDEuMjMtLjk5LDIuNy0uOTksNC40MXYxOC42MmgtNS40M1oiLz4KICAgICAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNOTA5LjAxLDE2NC40M2MtMy4wNCwwLTUuNzgtLjcxLTguMjMtMi4xMy0yLjQ1LTEuNDItNC40LTMuMzgtNS44NC01Ljg3LTEuNDQtMi40OS0yLjE2LTUuMzEtMi4xNi04LjQ3cy43MS01Ljk1LDIuMTMtOC40MSwzLjM2LTQuNCw1LjgxLTUuODRjMi40NS0xLjQ0LDUuMjEtMi4xNiw4LjI5LTIuMTZzNS43OC43MSw4LjIzLDIuMTNjMi40NSwxLjQyLDQuMzksMy4zNiw1LjgxLDUuODEsMS40MiwyLjQ1LDIuMTMsNS4yNywyLjEzLDguNDZzLS43NCw2LjAyLTIuMjIsOC40OWMtMS40OCwyLjQ3LTMuNDMsNC40Mi01Ljg3LDUuODQtMi40MywxLjQyLTUuMTMsMi4xMy04LjA5LDIuMTNaTTkwOS4wMSwxNTkuMTdjMS45NSwwLDMuNzEtLjQ5LDUuMjgtMS40NnMyLjgyLTIuMzIsMy43NC00LjAzYy45MS0xLjcxLDEuMzctMy42MiwxLjM3LTUuNzJzLS40Ni00LjA0LTEuMzctNS42OWMtLjkyLTEuNjUtMi4xNi0yLjk4LTMuNzQtMy45N3MtMy4zNC0xLjQ5LTUuMjgtMS40OS0zLjc3LjUtNS4zNCwxLjQ5LTIuODMsMi4zMi0zLjc3LDMuOTctMS40LDMuNTUtMS40LDUuNjkuNDcsNC4wMSwxLjQsNS43MmMuOTMsMS43MSwyLjE5LDMuMDYsMy43Nyw0LjAzczMuMzYsMS40Niw1LjM0LDEuNDZaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTk0MC40MiwxNjMuNzNsLTEyLjMyLTMxLjQ3aDYuMDdsOS44NywyNi42MmgtMi4xbDkuOTItMjYuNjJoNi4wN2wtMTIuMzgsMzEuNDdoLTUuMTRaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTk3MC44MywxNjQuNDNjLTIuMDYsMC0zLjg4LS4zOC01LjQ2LTEuMTRzLTIuODEtMS44MS0zLjcxLTMuMTVjLS45LTEuMzQtMS4zNC0yLjg5LTEuMzQtNC42NHMuMzYtMy4xOCwxLjA4LTQuNTJjLjcyLTEuMzQsMS44NS0yLjQ4LDMuMzktMy40MiwxLjU0LS45MywzLjQ3LTEuNiw1LjgxLTEuOTlsMTEuNjgtMS45M3Y0LjU1bC0xMC40NSwxLjc1Yy0yLjAyLjM1LTMuNDkuOTktNC40MSwxLjkzLS45Mi45My0xLjM3LDIuMDgtMS4zNywzLjQ0LDAsMS4yOC41MiwyLjM1LDEuNTUsMy4yMXMyLjMzLDEuMjgsMy44OCwxLjI4YzEuOTgsMCwzLjcxLS40Miw1LjE3LTEuMjYsMS40Ni0uODQsMi42MS0xLjk3LDMuNDUtMy40Mi44NC0xLjQ0LDEuMjUtMy4wNCwxLjI1LTQuNzl2LThjMC0xLjcxLS42My0zLjEtMS45LTQuMTctMS4yNy0xLjA3LTIuOTMtMS42MS00Ljk5LTEuNjEtMS43OSwwLTMuMzguNDYtNC43NiwxLjM3LTEuMzguOTItMi40LDIuMTMtMy4wNiwzLjY1bC00LjczLTIuNDVjLjU4LTEuNDQsMS41Mi0yLjczLDIuOC0zLjg4LDEuMjgtMS4xNSwyLjc4LTIuMDUsNC40OS0yLjcxczMuNS0uOTksNS4zNy0uOTljMi40MSwwLDQuNTMuNDYsNi4zNiwxLjM3LDEuODMuOTIsMy4yNiwyLjE4LDQuMjksMy43OSwxLjAzLDEuNjIsMS41NSwzLjQ5LDEuNTUsNS42M3YyMS4zN2gtNS4zMXYtNS45NmwuOTkuMzVjLS42NiwxLjI1LTEuNTYsMi4zMy0yLjY5LDMuMjctMS4xMy45My0yLjQ1LDEuNjctMy45NywyLjIyLTEuNTIuNTQtMy4xNy44Mi00Ljk2LjgyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDA5Ljc3LDE2NC40M2MtMy4wOCwwLTUuODEtLjcyLTguMi0yLjE2cy00LjI3LTMuNDEtNS42My01LjljLTEuMzYtMi40OS0yLjA0LTUuMjktMi4wNC04LjQxcy42OC01Ljk1LDIuMDQtOC40MWMxLjM2LTIuNDUsMy4yNC00LjQsNS42My01Ljg0LDIuMzktMS40NCw1LjEzLTIuMTYsOC4yLTIuMTYsMi4wNiwwLDMuOTkuMzcsNS43OCwxLjExLDEuNzkuNzQsMy4zNywxLjczLDQuNzMsMi45OCwxLjM2LDEuMjUsMi4zNSwyLjcxLDIuOTgsNC4zOGwtNC44NSwyLjM0Yy0uNzQtMS42My0xLjg3LTIuOTctMy4zOC00LTEuNTItMS4wMy0zLjI3LTEuNTUtNS4yNS0xLjU1cy0zLjYzLjQ5LTUuMTcsMS40NmMtMS41NC45Ny0yLjc1LDIuMy0zLjY1LDMuOTctLjksMS42Ny0xLjM0LDMuNi0xLjM0LDUuNzhzLjQ1LDQsMS4zNCw1LjY5Yy44OSwxLjY5LDIuMTEsMy4wMywzLjY1LDRzMy4yNiwxLjQ2LDUuMTcsMS40NiwzLjc0LS41Miw1LjI1LTEuNTVjMS41Mi0xLjAzLDIuNjUtMi40LDMuMzgtNC4xMmw0Ljg1LDIuNDVjLS42MiwxLjYzLTEuNjIsMy4wOC0yLjk4LDQuMzUtMS4zNiwxLjI2LTIuOTQsMi4yNy00LjczLDMuMDEtMS43OS43NC0zLjcyLDEuMTEtNS43OCwxLjExWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDMwLjM4LDEyNy4yNHYtNy4wMWg1LjQzdjcuMDFoLTUuNDNaTTEwMzAuMzgsMTYzLjczdi0zMS40N2g1LjQzdjMxLjQ3aC01LjQzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDU5LjE2LDE2NC40M2MtMy4wNCwwLTUuNzgtLjcxLTguMjMtMi4xMy0yLjQ1LTEuNDItNC40LTMuMzgtNS44NC01Ljg3LTEuNDQtMi40OS0yLjE2LTUuMzEtMi4xNi04LjQ3cy43MS01Ljk1LDIuMTMtOC40MWMxLjQyLTIuNDUsMy4zNi00LjQsNS44MS01Ljg0LDIuNDUtMS40NCw1LjIxLTIuMTYsOC4yOS0yLjE2czUuNzguNzEsOC4yMywyLjEzYzIuNDUsMS40Miw0LjM5LDMuMzYsNS44MSw1LjgxLDEuNDIsMi40NSwyLjEzLDUuMjcsMi4xMyw4LjQ2cy0uNzQsNi4wMi0yLjIyLDguNDljLTEuNDgsMi40Ny0zLjQ0LDQuNDItNS44Nyw1Ljg0LTIuNDMsMS40Mi01LjEzLDIuMTMtOC4wOCwyLjEzWk0xMDU5LjE2LDE1OS4xN2MxLjk1LDAsMy43MS0uNDksNS4yOC0xLjQ2czIuODItMi4zMiwzLjc0LTQuMDNjLjkxLTEuNzEsMS4zNy0zLjYyLDEuMzctNS43MnMtLjQ2LTQuMDQtMS4zNy01LjY5LTIuMTYtMi45OC0zLjc0LTMuOTctMy4zNC0xLjQ5LTUuMjgtMS40OS0zLjc3LjUtNS4zNCwxLjQ5LTIuODMsMi4zMi0zLjc3LDMuOTctMS40LDMuNTUtMS40LDUuNjkuNDcsNC4wMSwxLjQsNS43MmMuOTMsMS43MSwyLjE5LDMuMDYsMy43Nyw0LjAzczMuMzYsMS40Niw1LjM0LDEuNDZaTTEwNTYuNDEsMTI2LjM2bDQuNjEtOS4yMmg3LjM2bC02LjU0LDkuMjJoLTUuNDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEwODIuMzksMTYzLjczdi0zMS40N2g1LjMxdjYuMTNsLS44OC0uNTNjLjc4LTEuOTksMi4wMy0zLjUzLDMuNzctNC42NCwxLjczLTEuMTEsMy43Ny0xLjY2LDYuMS0xLjY2czQuMjcuNTEsNi4wNCwxLjUyYzEuNzcsMS4wMSwzLjE3LDIuNDEsNC4yLDQuMnMxLjU1LDMuODEsMS41NSw2LjA3djIwLjM3aC01LjQ5di0xOC42MmMwLTEuNzUtLjMxLTMuMjMtLjkzLTQuNDQtLjYyLTEuMjEtMS41MS0yLjE1LTIuNjYtMi44M3MtMi40Ni0xLjAyLTMuOTQtMS4wMi0yLjc5LjM0LTMuOTQsMS4wMmMtMS4xNS42OC0yLjA1LDEuNjMtMi43MSwyLjg2cy0uOTksMi43LS45OSw0LjQxdjE4LjYyaC01LjQzWiIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=" alt="INNLAB" style="height:28px">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FwYV8xIiBkYXRhLW5hbWU9IkNhcGEgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1NjAgMjg4Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjNTQ1NGU5OwogICAgICAgIHN0cm9rZS13aWR0aDogMHB4OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Zz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzkuNiw3MS4xYzEuNywxLjIsMy40LDIuNCw1LDMuNmwtMTMuOSwxOS4yYy0xLjYtMS4zLTMuMy0yLjUtNS0zLjZsMTMuOS0xOS4yWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzkuNiw3MS4xYzEuNywxLjIsMy40LDIuNCw1LDMuNmwtMTMuOSwxOS4yYy0xLjYtMS4zLTMuMy0yLjUtNS0zLjZsMTMuOS0xOS4yWiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTk2LjEsNjMuMmw3LjQsMjIuNmM0LjctMi4yLDkuNi0zLjgsMTQuOC00LjhsLTcuNC0yMi42Yy01LjEsMS4yLTEwLjEsMi44LTE0LjgsNC44WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik05Ni4xLDYzLjJsNy40LDIyLjZjNC43LTIuMiw5LjYtMy44LDE0LjgtNC44bC03LjQtMjIuNmMtNS4xLDEuMi0xMC4xLDIuOC0xNC44LDQuOFoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNDcuNyw4Mi4xYzEuOC41LDMuNiwxLjEsNS4zLDEuN2w3LjMtMjIuNWMtMS43LS42LTMuNS0xLjItNS4zLTEuN2wtNy4zLDIyLjVaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE0Ny43LDgyLjFjMS44LjUsMy42LDEuMSw1LjMsMS43bDcuMy0yMi41Yy0xLjctLjYtMy41LTEuMi01LjMtMS43bC03LjMsMjIuNVoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik03NC44LDExMi4yYzIuMy00LjEsNS4xLTcuOSw4LjMtMTEuNGwtMTkuMi0xNGMtMy4xLDMuNi01LjgsNy40LTguMywxMS40bDE5LjIsMTRaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTc0LjgsMTEyLjJjMi4zLTQuMSw1LjEtNy45LDguMy0xMS40bC0xOS4yLTE0Yy0zLjEsMy42LTUuOCw3LjQtOC4zLDExLjRsMTkuMiwxNFoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04Ny4xLDk2LjhjMy42LTMuMyw3LjctNi4zLDEyLTguN2wtMTQtMTkuMmMtNC4yLDIuNi04LjMsNS41LTEyLDguN2wxNCwxOS4yWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04Ny4xLDk2LjhjMy42LTMuMyw3LjctNi4zLDEyLTguN2wtMTQtMTkuMmMtNC4yLDIuNi04LjMsNS41LTEyLDguN2wxNCwxOS4yWiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIxMi45LDExMy40bC0yMi41LDcuM2MuOSwyLjIsMS42LDQuNSwyLjIsNi45bDIyLjUtNy4zYy0uNy0yLjMtMS40LTQuNi0yLjItNi45WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMTIuOSwxMTMuNGwtMjIuNSw3LjNjLjksMi4yLDEuNiw0LjUsMi4yLDYuOWwyMi41LTcuM2MtLjctMi4zLTEuNC00LjYtMi4yLTYuOVoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik02Ni4zLDE0NGMwLTIuMS4xLTQuMy4zLTYuNGgtMjMuN2MtLjIsMi4xLS4yLDQuMi0uMiw2LjRzMCw0LjMuMiw2LjRoMjMuN2MtLjItMi4xLS4zLTQuMi0uMy02LjRaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTY2LjMsMTQ0YzAtMi4xLjEtNC4zLjMtNi40aC0yMy43Yy0uMiwyLjEtLjIsNC4yLS4yLDYuNHMwLDQuMy4yLDYuNGgyMy43Yy0uMi0yLjEtLjMtNC4yLS4zLTYuNFoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOTQuOCwxNDRjMCwxLjMsMCwyLjctLjEsNGgyMy43YzAtMS4zLDAtMi43LDAtNHMwLTIuNywwLTRoLTIzLjdjMCwxLjMuMSwyLjcuMSw0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOTQuOCwxNDRjMCwxLjMsMCwyLjctLjEsNGgyMy43YzAtMS4zLDAtMi43LDAtNHMwLTIuNywwLTRoLTIzLjdjMCwxLjMuMSwyLjcuMSw0WiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTY3LjcsMTMwLjZjLjktNC40LDIuMy04LjcsNC4xLTEyLjdsLTIyLjYtNy4zYy0xLjcsNC4xLTMuMSw4LjMtNC4xLDEyLjdsMjIuNiw3LjNaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTY3LjcsMTMwLjZjLjktNC40LDIuMy04LjcsNC4xLTEyLjdsLTIyLjYtNy4zYy0xLjcsNC4xLTMuMSw4LjMtNC4xLDEyLjdsMjIuNiw3LjNaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTgwLjQsMTAzLjZjMS40LDEuOCwyLjgsMy42LDQsNS42bDE5LjItMTMuOWMtMS4zLTEuOS0yLjYtMy44LTQtNS42bC0xOS4yLDEzLjlaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4MC40LDEwMy42YzEuNCwxLjgsMi44LDMuNiw0LDUuNmwxOS4yLTEzLjljLTEuMy0xLjktMi42LTMuOC00LTUuNmwtMTkuMiwxMy45WiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyMi4zLDU2LjV2MjMuOHMwLDAsMCwwYzEuMS0uMSw0LjUtLjUsOC4yLS41czcuMS40LDguMi41YzAsMCwwLDAsMCwwdi0yMy44Yy0xLjMtLjEtNC43LS40LTguMi0uNHMtNi45LjMtOC4yLjRaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyMi4zLDU2LjV2MjMuOHMwLDAsMCwwYzEuMS0uMSw0LjUtLjUsOC4yLS41czcuMS40LDguMi41YzAsMCwwLDAsMCwwdi0yMy44Yy0xLjMtLjEtNC43LS40LTguMi0uNHMtNi45LjMtOC4yLjRaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTcyLjQsMTkyLjZjLTIuNCwyLTQuOSwzLjktNy41LDUuNmwxNCwxOS4yYzIuNi0xLjcsNS4xLTMuNiw3LjUtNS42bC0xNC0xOS4yWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzIuNCwxOTIuNmMtMi40LDItNC45LDMuOS03LjUsNS42bDE0LDE5LjJjMi42LTEuNyw1LjEtMy42LDcuNS01LjZsLTE0LTE5LjJaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNzEuNiwxNjkuNWMtMS42LTMuNy0yLjgtNy41LTMuNy0xMS41bC0yMi42LDcuM2MxLDMuOSwyLjIsNy44LDMuNywxMS41bDIyLjYtNy4zWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik03MS42LDE2OS41Yy0xLjYtMy43LTIuOC03LjUtMy43LTExLjVsLTIyLjYsNy4zYzEsMy45LDIuMiw3LjgsMy43LDExLjVsMjIuNi03LjNaIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTU0LjgsMjAzLjVjLTIuOSwxLjItNS44LDIuMS04LjksMi45bDcuMywyMi42YzMtLjgsNi0xLjgsOC45LTIuOWwtNy4zLTIyLjZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE1NC44LDIwMy41Yy0yLjksMS4yLTUuOCwyLjEtOC45LDIuOWw3LjMsMjIuNmMzLS44LDYtMS44LDguOS0yLjlsLTcuMy0yMi42WiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE5Mi44LDE1OS44Yy0uNywyLjctMS42LDUuNC0yLjYsOGwyMi42LDcuM2MxLTIuNiwxLjktNS4zLDIuNi04bC0yMi41LTcuM1oiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTkyLjgsMTU5LjhjLS43LDIuNy0xLjYsNS40LTIuNiw4bDIyLjYsNy4zYzEtMi42LDEuOS01LjMsMi42LThsLTIyLjUtNy4zWiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTE4NSwxNzhjLTEuNiwyLjUtMy4zLDQuOS01LjIsNy4ybDE5LjIsMTMuOWMxLjktMi4zLDMuNi00LjcsNS4yLTcuMmwtMTkuMi0xMy45WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xODUsMTc4Yy0xLjYsMi41LTMuMyw0LjktNS4yLDcuMmwxOS4yLDEzLjljMS45LTIuMywzLjYtNC43LDUuMi03LjJsLTE5LjItMTMuOVoiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04My40LDIxOC4ybDEzLjktMTkuMmMtMy4xLTEuOS02LjEtNC04LjgtNi40bC0xNCwxOS4yYzIuOCwyLjMsNS43LDQuNSw4LjgsNi40WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04My40LDIxOC4ybDEzLjktMTkuMmMtMy4xLTEuOS02LjEtNC04LjgtNi40bC0xNCwxOS4yYzIuOCwyLjMsNS43LDQuNSw4LjgsNi40WiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTgyLjIsMTg2LjJjLTIuNS0yLjktNC44LTYtNi44LTkuM2wtMTkuMiwxNGMyLDMuMiw0LjMsNi4zLDYuNyw5LjNsMTkuMi0xNFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNODIuMiwxODYuMmMtMi41LTIuOS00LjgtNi02LjgtOS4zbC0xOS4yLDE0YzIsMy4yLDQuMyw2LjMsNi43LDkuM2wxOS4yLTE0WiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTExNS43LDIwNi41Yy0zLjQtLjgtNi43LTEuOS05LjktMy4ybC03LjMsMjIuNmMzLjIsMS4zLDYuNSwyLjMsOS44LDMuMmw3LjMtMjIuNloiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTE1LjcsMjA2LjVjLTMuNC0uOC02LjctMS45LTkuOS0zLjJsLTcuMywyMi42YzMuMiwxLjMsNi41LDIuMyw5LjgsMy4ybDcuMy0yMi42WiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEzNS41LDIzMS43di0yMy43Yy0xLjYuMS0zLjMuMi00LjkuMnMtMy4zLDAtNC45LS4ydjIzLjdjMS42LDAsMy4zLjEsNC45LjFzMy4zLDAsNC45LS4xWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xMzUuNSwyMzEuN3YtMjMuN2MtMS42LjEtMy4zLjItNC45LjJzLTMuMywwLTQuOS0uMnYyMy43YzEuNiwwLDMuMy4xLDQuOS4xczMuMywwLDQuOS0uMVoiLz4KICAgIDwvZz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTEyMC4zLDEwNi41Yy0xLjIuMy0yLjQuNy0zLjUsMS4xbC02LjYtMjAuNGMxLjItLjQsMi4zLS44LDMuNS0xLjFsNi42LDIwLjRaTTEzMC41LDgzLjdjLTEuNCwwLTIuOSwwLTQuMy4ydjIxLjZjMS40LS4yLDIuOC0uMiw0LjMtLjIsMS41LDAsMi45LDAsNC4zLjJ2LTIxLjZjLTEuNCwwLTIuOC0uMi00LjMtLjJaTTE1My4xLDg4Yy0yLjYtMS01LjItMS45LTcuOS0yLjZsLTYuNywyMC41YzIuOC42LDUuNCwxLjUsNy45LDIuNmw2LjctMjAuNVpNMTY5LjIsOTcuN2MtMi4xLTEuNy00LjItMy4zLTYuNS00LjdsLTEyLjcsMTcuNGMyLjMsMS40LDQuNSwyLjksNi41LDQuN2wxMi43LTE3LjRaTTk2LjcsOTRjLTEuMS43LTIuMSwxLjUtMy4yLDIuM2wxMi42LDE3LjRjMS0uOCwyLjEtMS42LDMuMi0yLjNsLTEyLjYtMTcuNFpNMTgxLjUsMTExLjhjLTEuNC0yLjItMi45LTQuMy00LjYtNi4zbC0xNy40LDEyLjdjMS43LDEuOSwzLjMsNC4xLDQuNiw2LjNsMTcuNC0xMi43Wk03Mi41LDEyNy41bDIwLjQsNi42Yy40LTEuNC45LTIuOSwxLjQtNC4ybC0yMC41LTYuNmMtLjUsMS40LTEsMi44LTEuNCw0LjJaTTE2OS4yLDE0Ny42aDIxLjVjMC0xLjIuMS0yLjQuMS0zLjZzMC0yLjQtLjEtMy42aC0yMS41Yy4xLDEuMi4yLDIuNC4yLDMuNiwwLDEuMiwwLDIuNC0uMiwzLjZaTTgzLDEwNi44Yy0uOSwxLjEtMS43LDIuMi0yLjUsMy40bDE3LjQsMTIuNmMuOC0xLjIsMS42LTIuMywyLjUtMy40bC0xNy40LTEyLjZaTTkxLjgsMTQxLjZoLTIxLjVjMCwuOCwwLDEuNiwwLDIuNHMwLDEuNiwwLDIuNGgyMS41YzAtLjgsMC0xLjYsMC0yLjRzMC0xLjYsMC0yLjRaTTkyLjksMTkxLjFjMS40LDEuMSwyLjksMi4yLDQuNCwzLjJsMTIuNi0xNy40Yy0xLjYtMS0zLTIuMS00LjQtMy4ybC0xMi42LDE3LjRaTTEwOS4yLDIwMC40YzEuOC43LDMuNiwxLjMsNS41LDEuOGw2LjctMjAuNWMtMS45LS41LTMuNy0xLjEtNS41LTEuOGwtNi43LDIwLjVaTTgwLjIsMTc3LjNjMSwxLjUsMiwyLjksMy4xLDQuMmwxNy40LTEyLjZjLTEuMS0xLjMtMi4xLTIuOC0zLjEtNC4ybC0xNy40LDEyLjZaTTcyLjQsMTYwLjNjLjQsMS42LDEsMy4yLDEuNSw0LjdsMjAuNS02LjZjLS42LTEuNS0xLjEtMy4xLTEuNS00LjdsLTIwLjQsNi42Wk0xMzAuNSwyMDQuM2MxLDAsMiwwLDMsMHYtMjEuNWMtMSwwLTIsLjEtMywuMXMtMiwwLTMtLjF2MjEuNWMxLDAsMiwwLDMsMFpNMTg5LDEyOWMtLjYtMi41LTEuNC00LjktMi4zLTcuMmwtMjAuNSw2LjdjMSwyLjMsMS44LDQuNywyLjMsNy4ybDIwLjUtNi43Wk0xNDYuMiwyMDIuM2MyLS41LDQtMS4yLDYtMS45bC02LjctMjAuNWMtMS45LjgtMy45LDEuNC02LDEuOWw2LjcsMjAuNVpNMTg2LjcsMTY2Yy45LTIuMiwxLjYtNC40LDIuMi02LjdsLTIwLjUtNi43Yy0uNSwyLjMtMS4yLDQuNi0yLjIsNi43bDIwLjUsNi43Wk0xNzcuMywxODIuMWMxLjQtMS43LDIuOC0zLjYsNC01LjVsLTE3LjQtMTIuN2MtMS4yLDEuOS0yLjUsMy44LTQsNS41bDE3LjQsMTIuN1pNMTYzLjMsMTk0LjdjMS44LTEuMiwzLjYtMi41LDUuMy0zLjhsLTEyLjctMTcuNGMtMS42LDEuNC0zLjQsMi43LTUuMywzLjhsMTIuNiwxNy40WiIvPgogIDwvZz4KICA8Zz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0OC43LDEyOGgxMi4ydjcwLjdoLTEyLjJ2LTcwLjdaIi8+CiAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNzUuMywxNjMuOGMwLTIxLjMsMTYuMS0zNy40LDM3LTM3LjRzMjMuNCw1LjMsMzAuMiwxNWwtOS43LDcuNGMtNS43LTcuNy0xMi44LTExLjMtMjAuNi0xMS4zLTEzLjUsMC0yNC4yLDEwLjctMjQuMiwyNS45czExLDI1LjksMjQuNCwyNS45LDE2LjQtNC4zLDIxLjktMTEuOGw5LjMsNi44Yy02LjgsMTAuMy0xOC4yLDE2LjEtMzEuMywxNi4xLTIxLjMsMC0zNi45LTE1LjUtMzYuOS0zNi42WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDIyLjQsMTY2LjFoLTU5YzEsMTQuOSwxMC45LDIzLjQsMjUuMSwyMy40czE3LjQtMy45LDIzLjQtMTJsOC44LDYuN2MtNi44LDEwLjItMTguMiwxNi4xLTMyLjQsMTYuMS0yMi4xLDAtMzcuMy0xNC45LTM3LjMtMzYuNXMxNS45LTM3LjYsMzcuNC0zNy42LDM0LjUsMTMuOCwzNC41LDM0LjUtLjEsMy42LS40LDUuM1pNMzY0LjEsMTU1LjVoNDYuMmMtMS44LTEyLjItOS45LTE4LjctMjItMTguN3MtMjEuNCw2LjgtMjQuMiwxOC43WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDMyLjQsMTg5LjFsNy44LTkuMmM2LjcsNi4zLDE1LjUsOS41LDIzLjcsOS41czE1LjItNC4zLDE1LjItMTAuMi0zLjEtNy41LTEyLjEtOS42bC0xMi40LTIuOGMtMTQuMi0zLjItMjAuMi05LjMtMjAuMi0xOC45czEwLjYtMjEuNiwyNy4xLTIxLjYsMjIsNCwyOC43LDExLjNsLTguMiw4LjVjLTUuOC01LjgtMTMuMS04LjgtMjEuMy04LjhzLTE0LjMsMy45LTE0LjMsOS42LDIuNiw2LjgsMTIuNCw5bDEyLjQsMi44YzE0LjMsMy4yLDE5LjksOS43LDE5LjksMTkuNXMtMTAuMiwyMi4xLTI3LjYsMjIuMS0yMy45LTQuMy0zMS0xMS4zWiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTA1LjEsMTI4aDEyLjJ2NzAuN2gtMTIuMnYtNzAuN1oiLz4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yNDguNywxMDEuMXYtMTIuM2gzLjd2MTJjMCwzLjcsMS44LDUuNSw0LjksNS41czQuOS0xLjgsNC45LTUuNXYtMTJoMy43djEyLjNjMCw1LjUtMy4zLDguNi04LjYsOC42cy04LjYtMy4xLTguNi04LjZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4NC43LDEwMC4zdjloLTMuNXYtOC4zYzAtMi42LTEuMi0zLjktMy4yLTMuOXMtMi42LjUtMy43LDEuOHYxMC40aC0zLjV2LTE1aDMuNXYxLjNjMS4yLTEsMi45LTEuNiw0LjYtMS42LDMuNSwwLDUuOCwyLjMsNS44LDYuNFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjg4LjksOTBjMC0xLjIsMS0yLjIsMi4zLTIuMnMyLjIsMSwyLjIsMi4yLTEsMi4zLTIuMiwyLjMtMi4zLTEtMi4zLTIuM1pNMjg5LjQsOTQuM2gzLjV2MTVoLTMuNXYtMTVaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTMxMi4xLDk0LjNsLTYuMiwxNWgtMy44bC02LjItMTVoMy45bDQuMiwxMC43LDQuMi0xMC43aDMuOVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzI5LjIsMTAyLjdoLTExLjljLjMsMi42LDIsNCw0LjYsNHMzLjItLjYsNC40LTIuMWwyLjUsMS45Yy0xLjYsMi4xLTQsMy4zLTcsMy4zLTQuOSwwLTguMS0zLjItOC4xLTcuOHMzLjMtOCw4LTgsNy41LDIuOSw3LjUsNy40LDAsLjksMCwxLjNaTTMxNy41LDEwMGg4LjNjLS40LTIuMS0xLjgtMy4xLTMuOS0zLjFzLTMuOCwxLjEtNC4zLDMuMVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzQyLjUsOTQuMWwtLjIsMy4zYy0uNSwwLTEtLjEtMS40LS4xLTEuNywwLTMuMi44LTQuMSwyLjN2OS44aC0zLjV2LTE1aDMuNXYxLjZjMS0xLjMsMi42LTIsNC4yLTJzMSwwLDEuNi4yWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNDQuOSwxMDcuNWwxLjgtMi42YzEuNiwxLjIsMy4zLDEuOCw1LDEuOHMyLjYtLjcsMi42LTEuNi0uNS0xLjItMi4xLTEuNmwtMi42LS42Yy0zLS43LTQuMy0yLTQuMy00LjFzMi4zLTQuOCw2LTQuOCw0LjcuOCw2LjIsMi4ybC0xLjksMi41Yy0xLjQtMS4xLTIuOS0xLjctNC41LTEuN3MtMi40LjYtMi40LDEuNS41LDEuMSwyLjEsMS41bDIuNi42YzMuMS43LDQuMywyLjEsNC4zLDQuMnMtMi4zLDQuOS02LjIsNC45LTUuMS0uOS02LjctMi4yWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0zNjEsOTBjMC0xLjIsMS0yLjIsMi4zLTIuMnMyLjIsMSwyLjIsMi4yLTEsMi4zLTIuMiwyLjMtMi4zLTEtMi4zLTIuM1pNMzYxLjUsOTQuM2gzLjV2MTVoLTMuNXYtMTVaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM4NC4zLDg3LjZ2MjEuN2gtMy41di0xLjFjLTEuMSwxLTIuNywxLjUtNC4zLDEuNS00LjEsMC03LjUtMy4zLTcuNS03LjlzMy40LTcuOSw3LjUtNy45LDMuMi41LDQuMywxLjV2LTcuOGgzLjVaTTM4MC44LDEwNC43di01LjhjLTEtMS4yLTIuNC0xLjctMy44LTEuNy0yLjUsMC00LjQsMS44LTQuNCw0LjZzMS45LDQuNiw0LjQsNC42LDIuOC0uNiwzLjgtMS44WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00MDMuNSw5NC4zdjE1aC0zLjV2LTEuMWMtMS4xLDEtMi43LDEuNS00LjMsMS41LTQuMSwwLTcuNS0zLjMtNy41LTcuOXMzLjQtNy45LDcuNS03LjksMy4yLjUsNC4zLDEuNXYtMS4xaDMuNVpNNDAwLDEwNC43di01LjhjLTEtMS4yLTIuNC0xLjctMy44LTEuNy0yLjUsMC00LjQsMS44LTQuNCw0LjZzMS45LDQuNiw0LjQsNC42LDIuOC0uNiwzLjgtMS44WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00MjIuOCw4Ny42djIxLjdoLTMuNXYtMS4xYy0xLjEsMS0yLjcsMS41LTQuMywxLjUtNC4xLDAtNy41LTMuMy03LjUtNy45czMuNC03LjksNy41LTcuOSwzLjIuNSw0LjMsMS41di03LjhoMy41Wk00MTkuMywxMDQuN3YtNS44Yy0xLTEuMi0yLjQtMS43LTMuOC0xLjctMi41LDAtNC40LDEuOC00LjQsNC42czEuOSw0LjYsNC40LDQuNiwyLjgtLjYsMy44LTEuOFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="Universidad Icesi" height="48">" alt="Universidad Icesi" style="height:28px;margin-left:16px;filter:brightness(0) invert(1);opacity:.85">
+      </div>
+      <div class="report-header__meta">
+        <span class="report-header__meta-label">Formato</span>
+        <span class="report-header__meta-value">Virtual · Sincrónico · Remoto</span>
+      </div>
+    </div>
+    <div class="report-header__title-block">
+      <span class="report-header__eyebrow">Laboratorio de Innovación · ACH Colombia</span>
+      <h1 class="report-header__title">Programa de Formación<br>IA en el Ciclo de Vida de Productos Digitales</h1>
+      <p class="report-header__subtitle">Formación práctica en el uso de herramientas de inteligencia artificial para cada etapa del proceso de diseño, desarrollo e innovación de productos y servicios digitales.</p>
+    </div>
+    <div class="report-header__kpi-bar">
+      <div class="report-header__kpi-item">
+        <span class="report-header__kpi-value">40</span>
+        <span class="report-header__kpi-label">Horas de formación</span>
+      </div>
+      <div class="report-header__kpi-item">
+        <span class="report-header__kpi-value">20</span>
+        <span class="report-header__kpi-label">Sesiones sincrónicas</span>
+      </div>
+      <div class="report-header__kpi-item">
+        <span class="report-header__kpi-value">9</span>
+        <span class="report-header__kpi-label">Módulos temáticos</span>
+      </div>
+      <div class="report-header__kpi-item">
+        <span class="report-header__kpi-value">4</span>
+        <span class="report-header__kpi-label">Docentes especializados</span>
+      </div>
+      <div class="report-header__kpi-item">
+        <span class="report-header__kpi-value">+20h</span>
+        <span class="report-header__kpi-label">Preparación general</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="reporte-body">
+
+    <!-- CONTEXTO -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-title__label">Contexto del programa</span>
+        <h2 class="section-title__heading">Objetivo y enfoque</h2>
+      </div>
+      <div class="grid-2">
+        <div class="highlight-box">
+          <span class="highlight-box__label">Propósito</span>
+          <span class="highlight-box__texto">Integrar herramientas de IA de forma ordenada en cada fase del ciclo de vida de productos digitales de ACH Colombia, desde el descubrimiento hasta la analítica en producción.</span>
+        </div>
+        <div class="highlight-box highlight-box--green">
+          <span class="highlight-box__label">Entorno tecnológico</span>
+          <span class="highlight-box__texto">MS365 (SharePoint, Teams, Outlook, Azure DevOps, Azure Pipelines) · Suite Claude (Haiku, Sonnet, Opus) · GitHub · Figma · Maze · PostHog</span>
+        </div>
+      </div>
+      <div class="alerta alerta--info">
+        <span class="alerta__titulo">Suite IA oficial</span>
+        <p class="alerta__texto">La suite Claude es la plataforma de IA institucional del laboratorio. Se usarán los modelos Claude Haiku (tareas rutinarias), Claude Sonnet (implementación y síntesis) y Claude Opus (análisis estratégico y arquitectura) según el tipo de tarea en cada módulo.</p>
+      </div>
+    </div>
+
+    <hr class="divider--thick">
+
+    <!-- DOCENTES -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-title__label">Equipo docente</span>
+        <h2 class="section-title__heading">Profesores del programa</h2>
+        <p class="section-title__desc">Cada docente lidera el módulo de su área de especialidad. El módulo integrador (Módulo 8) es co-facilitado.</p>
+      </div>
+      <div class="grid-2">
+        
+      <div class="docente-card" style="border-top-color:#1A6896">
+        <div class="docente-card__nombre">Andrés Felipe Naranjo</div>
+        <div class="docente-card__rol">Investigación inicial y búsqueda de información base para contexto de negocio.</div>
+        <div class="docente-card__modulos">Módulos 0, 1 y 8</div>
+        <div class="text-xs text-muted" style="margin-top:2px">Bloques 1, 2, 3, 19 y 20</div>
+      </div>
+      <div class="docente-card" style="border-top-color:#1B6B3A">
+        <div class="docente-card__nombre">Néstor Tóbar</div>
+        <div class="docente-card__rol">Diseño UX y UI.</div>
+        <div class="docente-card__modulos">Módulos 2, 3 y 4</div>
+        <div class="text-xs text-muted" style="margin-top:2px">Bloques 4, 5, 6, 7, 8, 9 y 10</div>
+      </div>
+      <div class="docente-card" style="border-top-color:#7B5800">
+        <div class="docente-card__nombre">Jose Moncada</div>
+        <div class="docente-card__rol">Prototipado y exploración de casos de uso de interacción para negocio y estrategia de producto.</div>
+        <div class="docente-card__modulos">Módulo 5</div>
+        <div class="text-xs text-muted" style="margin-top:2px">Bloque 19 (integrador)</div>
+      </div>
+      <div class="docente-card" style="border-top-color:#0D47A1">
+        <div class="docente-card__nombre">Juan Carlos Muñoz</div>
+        <div class="docente-card__rol">Ciclo de vida de software y diseño con especificaciones specs (BMAD).</div>
+        <div class="docente-card__modulos">Módulos 5, 6, 7 y 8</div>
+        <div class="text-xs text-muted" style="margin-top:2px">Bloques 11, 12, 13, 14, 15, 16, 17, 18, 19 y 20</div>
+      </div>
+      </div>
+    </div>
+
+    <hr class="divider--thick">
+
+    <!-- FLUJO GENERAL -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-title__label">Estructura del programa</span>
+        <h2 class="section-title__heading">Flujo de aprendizaje por etapa</h2>
+      </div>
+      <div class="tabla-wrapper">
+        <table class="tabla-datos tabla-datos--striped">
+          <thead>
+            <tr>
+              <th>#</th><th>Módulo</th><th>Etapa del ciclo</th>
+              <th>Sesiones</th><th>Horas</th><th>Herramientas clave</th><th>Docente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>Fundamentos</td><td>Introducción al ciclo de vida con IA</td><td class="num">1</td><td class="num">2h</td><td>Claude · MCP MS365 · SharePoint · GitHub</td><td>Andrés F. Naranjo</td></tr>
+            <tr><td>1</td><td>Descubrimiento</td><td>Investigación y síntesis con IA</td><td class="num">2</td><td class="num">4h</td><td>Claude Deep Research · MCP MS365 · Outlook · Teams</td><td>Andrés F. Naranjo</td></tr>
+            <tr><td>2</td><td>Diseño UX/UI</td><td>Diseño de interfaces con IA</td><td class="num">3</td><td class="num">6h</td><td>Figma AI · Google Stitch · MCP Figma · Claude Code</td><td>Néstor Tóbar</td></tr>
+            <tr><td>3</td><td>Historias de Usuario</td><td>Requerimientos y backlog con IA</td><td class="num">2</td><td class="num">4h</td><td>BMAD · Claude Code · Azure DevOps · GitHub</td><td>Néstor Tóbar</td></tr>
+            <tr><td>4</td><td>Validación</td><td>Pruebas de usabilidad con IA</td><td class="num">2</td><td class="num">4h</td><td>Maze · Figma · Azure DevOps</td><td>Néstor Tóbar</td></tr>
+            <tr><td>5</td><td>Desarrollo</td><td>Desarrollo asistido por IA</td><td class="num">4</td><td class="num">8h</td><td>Claude Code · Cursor · BMAD · GitHub · Azure DevOps</td><td>Juan Carlos Muñoz</td></tr>
+            <tr><td>6</td><td>Testing</td><td>Testing automatizado con IA</td><td class="num">2</td><td class="num">4h</td><td>Playwright · Claude Code · Azure Pipelines · Teams</td><td>Juan Carlos Muñoz</td></tr>
+            <tr><td>7</td><td>Analítica</td><td>Comportamiento real en producción</td><td class="num">2</td><td class="num">4h</td><td>MS Clarity · PostHog · PostHog AI · Copilot</td><td>Juan Carlos Muñoz</td></tr>
+            <tr class="row--highlight"><td>8</td><td>Proyecto Integrador</td><td>Flujo completo de punta a punta</td><td class="num">2</td><td class="num">4h</td><td>Todas las herramientas del programa</td><td>Co-facilitado</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3"><strong>Total</strong></td><td class="num"><strong>20</strong></td><td class="num"><strong>40h</strong></td><td colspan="2">+ 20h preparación general</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <hr class="divider--thick">
+
+    <!-- MÓDULOS DETALLADOS -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-title__label">Detalle por sesión</span>
+        <h2 class="section-title__heading">Programa sesión a sesión</h2>
+        <p class="section-title__desc">Cada sesión tiene una duración máxima de 2 horas en formato virtual sincrónico remoto. Se muestra el objetivo, actividades principales y herramientas de cada bloque.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#4B3D7E;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 0</div>
+          <div class="modulo-header__title">Fundamentos</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Introducción al ciclo de vida con IA</span>
+        </div>
+        <div class="modulo-header__badge">1 sesión · 2h</div>
+      </div>
+      <div class="modulo-body" style="background:#F4EEFD10;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#4B3D7E">1</div>
+          <div>
+            <div class="sesion-titulo">El nuevo paradigma: IA en el ciclo de vida de productos ACH</div>
+            <span class="text-xs text-muted">2h · Andrés Felipe Naranjo</span>
+          </div>
+          <div class="sesion-objetivo">Que los participantes comprendan el mapa completo de herramientas IA por etapa, la suite Claude (Haiku / Sonnet / Opus), el rol de los MCPs con MS365 y el entorno de trabajo del laboratorio.</div>
+          <div class="sesion-tools">Claude (Sonnet) · MCP MS365 · SharePoint · GitHub</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#1A6896;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 1</div>
+          <div class="modulo-header__title">Descubrimiento</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Investigación y síntesis con IA</span>
+        </div>
+        <div class="modulo-header__badge">2 sesiónes · 4h</div>
+      </div>
+      <div class="modulo-body" style="background:#EAF4FB10;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#1A6896">2</div>
+          <div>
+            <div class="sesion-titulo">Claude Deep Research aplicado a fintech y pagos digitales</div>
+            <span class="text-xs text-muted">2h · Andrés Felipe Naranjo</span>
+          </div>
+          <div class="sesion-objetivo">Dominar técnicas de investigación profunda con Claude para benchmarking, síntesis de entrevistas y generación de hipótesis aplicadas al contexto de pagos ACH.</div>
+          <div class="sesion-tools">Claude Deep Research (Sonnet / Opus)</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#1A6896">3</div>
+          <div>
+            <div class="sesion-titulo">MCPs MS365: SharePoint, Outlook y Teams para research</div>
+            <span class="text-xs text-muted">2h · Andrés Felipe Naranjo</span>
+          </div>
+          <div class="sesion-objetivo">Configurar y usar los MCPs de MS365 para conectar Claude con documentación interna, correos y canales de Teams, construyendo un flujo de research replicable.</div>
+          <div class="sesion-tools">Claude Sonnet · MCP MS365 · SharePoint · Outlook · Teams</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#1B6B3A;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 2</div>
+          <div class="modulo-header__title">Diseño UX/UI</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Diseño de interfaces con IA</span>
+        </div>
+        <div class="modulo-header__badge">3 sesiónes · 6h</div>
+      </div>
+      <div class="modulo-body" style="background:#E8F5E910;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#1B6B3A">4</div>
+          <div>
+            <div class="sesion-titulo">Figma AI: de prompt a componente</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Generar componentes, layouts y microcopy para productos financieros usando Figma AI, integrando resultados al design system de ACH.</div>
+          <div class="sesion-tools">Figma AI · Figma (design system ACH)</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#1B6B3A">5</div>
+          <div>
+            <div class="sesion-titulo">Google Stitch: prototipado rápido desde texto</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Construir prototipos navegables de flujos de pago y cobro en minutos usando Google Stitch, listos para ser validados con Maze.</div>
+          <div class="sesion-tools">Claude Code + Google Stitch MCP</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#1B6B3A">6</div>
+          <div>
+            <div class="sesion-titulo">MCP Figma: Claude como co-piloto de diseño</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Usar el MCP Figma para que Claude lea y construya pantallas en archivos Figma a partir de specs textuales, cerrando el ciclo spec → diseño automatizado.</div>
+          <div class="sesion-tools">Claude Sonnet · MCP Figma · Figma</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#7B5800;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 3</div>
+          <div class="modulo-header__title">Historias de Usuario</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Requerimientos y backlog con IA</span>
+        </div>
+        <div class="modulo-header__badge">2 sesiónes · 4h</div>
+      </div>
+      <div class="modulo-body" style="background:#FFF8E110;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#7B5800">7</div>
+          <div>
+            <div class="sesion-titulo">BMAD + Claude: generación de PRD e historias de usuario</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Instalar y operar BMAD para generar PRDs, épicas e historias de usuario consistentes con criterios Gherkin, usando Claude Sonnet como motor de redacción.</div>
+          <div class="sesion-tools">BMAD · Claude Code · Azure DevOps · GitHub</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#7B5800">8</div>
+          <div>
+            <div class="sesion-titulo">Azure DevOps: backlog, sprints y trazabilidad con IA</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Exportar historias generadas por BMAD a Azure DevOps y usar Claude con MCP MS365 para síntesis, priorización y planificación de sprints.</div>
+          <div class="sesion-tools">Azure DevOps · Claude Code · MCP MS365 · GitHub</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#C55A11;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 4</div>
+          <div class="modulo-header__title">Validación</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Pruebas de usabilidad con IA</span>
+        </div>
+        <div class="modulo-header__badge">2 sesiónes · 4h</div>
+      </div>
+      <div class="modulo-body" style="background:#FCE4D610;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#C55A11">9</div>
+          <div>
+            <div class="sesion-titulo">Maze: diseño y ejecución de tests de usabilidad</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Configurar y lanzar tests de usabilidad sobre prototipos Figma usando Maze, con escenarios realistas para flujos de pago y cobro de ACH.</div>
+          <div class="sesion-tools">Maze · Figma</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#C55A11">10</div>
+          <div>
+            <div class="sesion-titulo">Maze: análisis de resultados e integración al backlog</div>
+            <span class="text-xs text-muted">2h · Néstor Tóbar</span>
+          </div>
+          <div class="sesion-objetivo">Interpretar heatmaps, click maps y reportes de Maze para priorizar hallazgos y crear work items en Azure DevOps desde los insights de usabilidad.</div>
+          <div class="sesion-tools">Maze · Azure DevOps</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#0D47A1;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 5</div>
+          <div class="modulo-header__title">Desarrollo</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Desarrollo asistido por IA</span>
+        </div>
+        <div class="modulo-header__badge">4 sesiónes · 8h</div>
+      </div>
+      <div class="modulo-body" style="background:#E3F2FD10;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#0D47A1">11</div>
+          <div>
+            <div class="sesion-titulo">Claude Code: setup y filosofía spec-first</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Instalar Claude Code, construir un CLAUDE.md para el proyecto del laboratorio y aplicar el flujo spec-first antes de escribir cualquier línea de código.</div>
+          <div class="sesion-tools">Claude Code · Claude (Haiku / Sonnet / Opus) · GitHub</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#0D47A1">12</div>
+          <div>
+            <div class="sesion-titulo">Claude Code: implementación de historias de usuario</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Implementar una historia de usuario completa con Claude Code siguiendo el flujo: HU Azure DevOps → spec → plan → código → PR en GitHub.</div>
+          <div class="sesion-tools">Claude Code · Claude Sonnet · GitHub · Azure DevOps</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#0D47A1">13</div>
+          <div>
+            <div class="sesion-titulo">IDE con contexto persistente y AGENTS.md</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Configurar Cursor con un AGENTS.md específico para el stack ACH y usar Plan Mode para planear, revisar y ejecutar cambios de forma segura y trazable.</div>
+          <div class="sesion-tools">Cursor · GitHub</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#0D47A1">14</div>
+          <div>
+            <div class="sesion-titulo">Flujo integrado: BMAD + Claude Code + Azure DevOps</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Ejecutar el pipeline completo: desde la historia en Azure DevOps hasta el PR en GitHub, usando BMAD y Claude Code de forma encadenada.</div>
+          <div class="sesion-tools">BMAD · Claude Code · Azure DevOps · GitHub</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#6A1B9A;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 6</div>
+          <div class="modulo-header__title">Testing</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Testing automatizado con IA</span>
+        </div>
+        <div class="modulo-header__badge">2 sesiónes · 4h</div>
+      </div>
+      <div class="modulo-body" style="background:#F3E5F510;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#6A1B9A">15</div>
+          <div>
+            <div class="sesion-titulo">Playwright + Claude Code: tests E2E desde historias</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Generar suites de tests E2E para flujos críticos de ACH usando Claude Code a partir de los criterios Gherkin definidos en Azure DevOps.</div>
+          <div class="sesion-tools">Playwright · Claude Code · GitHub</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#6A1B9A">16</div>
+          <div>
+            <div class="sesion-titulo">CI/CD con Azure Pipelines: pipeline automatizado</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Generar y configurar un pipeline de CI/CD en Azure Pipelines con Claude Code, integrando la ejecución automática de tests en cada PR del repositorio.</div>
+          <div class="sesion-tools">Azure Pipelines · Claude Code · Playwright · Microsoft Teams</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#00695C;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 7</div>
+          <div class="modulo-header__title">Analítica</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Comportamiento real en producción</span>
+        </div>
+        <div class="modulo-header__badge">2 sesiónes · 4h</div>
+      </div>
+      <div class="modulo-body" style="background:#E0F2F110;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#00695C">17</div>
+          <div>
+            <div class="sesion-titulo">MS Clarity: comportamiento real integrado al ecosistema MS</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Instalar y operar MS Clarity sobre un ambiente de pruebas ACH para analizar el comportamiento real de usuarios en flujos de pago, apoyados por Copilot.</div>
+          <div class="sesion-tools">MS Clarity · Microsoft Teams · Copilot (Clarity)</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#00695C">18</div>
+          <div>
+            <div class="sesion-titulo">PostHog: product analytics con IA para pagos</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+          </div>
+          <div class="sesion-objetivo">Instrumentar eventos clave de un producto ACH en PostHog, construir funnels de conversión y usar PostHog AI para responder preguntas de negocio en lenguaje natural.</div>
+          <div class="sesion-tools">PostHog · PostHog AI</div>
+        </div>
+      </div>
+    </div>
+    <div class="modulo-block" style="margin-top:0">
+      <div class="modulo-header" style="background:#E65100;color:#fff">
+        <div>
+          <div class="modulo-header__num">Módulo 8</div>
+          <div class="modulo-header__title">Proyecto Integrador</div>
+        </div>
+        <div style="flex:1;margin-left:16px">
+          <span style="font-size:13px;opacity:.8">Flujo completo de punta a punta</span>
+        </div>
+        <div class="modulo-header__badge">2 sesiónes · 4h</div>
+      </div>
+      <div class="modulo-body" style="background:#FFF3E010;">
+        
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#E65100">19</div>
+          <div>
+            <div class="sesion-titulo">Sprint integrador: feature real con el flujo completo</div>
+            <span class="text-xs text-muted">2h · Andrés F. Naranjo + Jose Moncada</span>
+          </div>
+          <div class="sesion-objetivo">Aplicar el flujo completo (Research → Diseño → HU → Validación → Desarrollo → Testing) sobre un feature real del laboratorio ACH, usando mínimo 5 herramientas del programa.</div>
+          <div class="sesion-tools">Claude · BMAD · Figma AI · Maze · Claude Code · Playwright · Azure DevOps · GitHub · MS Clarity · PostHog</div>
+        </div>
+        <div class="sesion-row">
+          <div class="sesion-num" style="background:#E65100">20</div>
+          <div>
+            <div class="sesion-titulo">Demo Day: retrospectiva y plan de adopción ACH</div>
+            <span class="text-xs text-muted">2h · Juan Carlos Muñoz + Andrés F. Naranjo</span>
+          </div>
+          <div class="sesion-objetivo">Cada equipo presenta su proceso y resultado, y el grupo define colectivamente la hoja de ruta de adopción de IA en el laboratorio ACH para los próximos 90 días.</div>
+          <div class="sesion-tools">Todas las herramientas del programa</div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <hr class="divider--thick">
+
+    <!-- HERRAMIENTAS RESUMEN -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-title__label">Stack tecnológico</span>
+        <h2 class="section-title__heading">Herramientas del programa por categoría</h2>
+      </div>
+      <div class="grid-3">
+        <div class="kpi-card kpi-card--tint-blue">
+          <span class="kpi-card__label">Suite IA oficial</span>
+          <span class="kpi-card__value" style="font-size:16px;font-weight:700">Claude</span>
+          <span class="kpi-card__desc">Haiku · Sonnet · Opus — Claude Code — BMAD — MCPs MS365 y Figma</span>
+        </div>
+        <div class="kpi-card kpi-card--tint-green">
+          <span class="kpi-card__label">Ecosistema MS365</span>
+          <span class="kpi-card__value" style="font-size:16px;font-weight:700">Microsoft</span>
+          <span class="kpi-card__desc">SharePoint · Outlook · Teams · Azure DevOps · Azure Pipelines · MS Clarity</span>
+        </div>
+        <div class="kpi-card kpi-card--tint-purple">
+          <span class="kpi-card__label">Diseño y validación</span>
+          <span class="kpi-card__value" style="font-size:16px;font-weight:700">Figma + Maze</span>
+          <span class="kpi-card__desc">Figma AI · Google Stitch · MCP Figma · Maze (usabilidad y análisis)</span>
+        </div>
+        <div class="kpi-card kpi-card--tint-orange">
+          <span class="kpi-card__label">Desarrollo e IDE</span>
+          <span class="kpi-card__value" style="font-size:16px;font-weight:700">Claude Code + Cursor</span>
+          <span class="kpi-card__desc">Desarrollo spec-first · CLAUDE.md · AGENTS.md · GitHub · Playwright</span>
+        </div>
+        <div class="kpi-card kpi-card--tint-blue">
+          <span class="kpi-card__label">Analítica</span>
+          <span class="kpi-card__value" style="font-size:16px;font-weight:700">PostHog + Clarity</span>
+          <span class="kpi-card__desc">Product analytics · Funnels · Feature flags · Heatmaps · Grabaciones de sesión</span>
+        </div>
+        <div class="kpi-card kpi-card--tint-green">
+          <span class="kpi-card__label">Herramientas gratuitas</span>
+          <span class="kpi-card__value" style="font-size:16px;font-weight:700">BMAD + Stitch</span>
+          <span class="kpi-card__desc">BMAD open source (MIT) · Google Stitch en beta pública · MS Clarity sin costo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTA FINAL -->
+    <div class="alerta alerta--advertencia">
+      <span class="alerta__titulo">Consideraciones de privacidad y uso</span>
+      <p class="alerta__texto">No compartir datos sensibles, código propietario crítico ni información de clientes en herramientas en etapa de preview (Google Stitch) hasta confirmar sus políticas definitivas. La suite Claude en plan Team garantiza que los datos no se usan para entrenamiento de modelos. Azure DevOps y MS365 operan bajo la política de datos corporativa de ACH Colombia.</p>
+    </div>
+
+  </div><!-- /reporte-body -->
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FwYV8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDExMjIuMTUgMjIwLjg0Ij4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMzAuMy4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjMgQnVpbGQgMTgyKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6ICNmZmZmZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJDYXBhXzEiPgogICAgPGc+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNi4zOSwxNzIuMjdWMjUuMTdoMTkuMzV2MTQ3LjA5aC0xOS4zNVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjguNTEsMTcyLjI3VjI1LjE3aDE2LjE5bDg0LjUsMTE4Ljg2LTcuMzEuNzlWMjUuMTdoMTkuNTV2MTQ3LjA5aC0xNi4xOUw4MS4xNSw1Mi42Mmw2LjcxLS43OXYxMjAuNDRoLTE5LjM1WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMTQuMjIsMTcyLjI3VjI1LjE3aDE2LjE5bDg0LjUsMTE4Ljg2LTcuMzEuNzlWMjUuMTdoMTkuNTV2MTQ3LjA5aC0xNi4xOWwtODQuMTEtMTE5LjY1LDYuNzEtLjc5djEyMC40NGgtMTkuMzVaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTM1OS45MywxNzIuMjdWMjUuMTdoMTkuMzV2MTI5LjMyaDY0LjU2djE3Ljc3aC04My45MVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDUxLjM0LDE3Mi4yN2w1Mi43Mi0xNDcuMDloMjIuOWw1Mi43MiwxNDcuMDloLTIwLjczbC0xMi4wNC0zNC41NWgtNjIuNzlsLTEyLjA0LDM0LjU1aC0yMC43M1pNNDkwLjI0LDExOS45NWg1MC41NGwtMjguMDQtODAuNzVoNS41M2wtMjguMDQsODAuNzVaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTU5OC4yNCwxNzIuMjdWMjUuMTdoNjEuOGM4LjgyLDAsMTYuNDIsMS41OCwyMi44LDQuNzQsNi4zOCwzLjE2LDExLjMyLDcuNiwxNC44MSwxMy4zMywzLjQ5LDUuNzMsNS4yMywxMi41NCw1LjIzLDIwLjQzLDAsNy4yNC0xLjg4LDEzLjc5LTUuNjMsMTkuNjUtMy43NSw1Ljg2LTkuMjUsMTAuNDMtMTYuNDksMTMuNzJsLS4yLTcuMzFjNi4zMiwyLjM3LDExLjU1LDUuNSwxNS43LDkuMzgsNC4xNSwzLjg4LDcuMjcsOC4zNiw5LjM4LDEzLjQzLDIuMSw1LjA3LDMuMTYsMTAuNDMsMy4xNiwxNi4wOSwwLDEzLjU2LTQuMzQsMjQuMjItMTMuMDMsMzEuOTktOC42OSw3Ljc3LTIwLjUzLDExLjY1LTM1LjU0LDExLjY1aC02MlpNNjE3LjU5LDg1LjU5aDQyLjA1YzcuMTEsMCwxMi44My0yLjA3LDE3LjE4LTYuMjIsNC4zNC00LjE1LDYuNTItOS40NCw2LjUyLTE1Ljg5cy0yLjE3LTExLjg1LTYuNTItMTUuNGMtNC4zNC0zLjU1LTEwLjA3LTUuMzMtMTcuMTgtNS4zM2gtNDIuMDV2NDIuODRaTTYxNy41OSwxNTQuNWg0My40NGM4LjU1LDAsMTUuNC0yLjMsMjAuNTMtNi45MSw1LjEzLTQuNjEsNy43LTEwLjg2LDcuNy0xOC43NnMtMi41Ny0xNC4xOC03LjctMTguODZjLTUuMTMtNC42Ny0xMS45OC03LjAxLTIwLjUzLTcuMDFoLTQzLjQ0djUxLjUzWiIvPgogICAgICA8L2c+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MzEuNiw5NC4zN2MtMy4wNywwLTUuOTEtLjU1LTguNDktMS42Ni0yLjU5LTEuMTEtNC44NS0yLjY4LTYuNzctNC43LTEuOTMtMi4wMi0zLjQyLTQuNC00LjQ3LTcuMTItMS4wNS0yLjcyLTEuNTgtNS43LTEuNTgtOC45M3MuNTMtNi4yNywxLjU4LTguOTljMS4wNS0yLjcyLDIuNTMtNS4xLDQuNDQtNy4xMiwxLjkxLTIuMDIsNC4xNi0zLjU5LDYuNzctNC43LDIuNjEtMS4xMSw1LjQ1LTEuNjYsOC41Mi0xLjY2czUuNjkuNTMsOC4wOSwxLjU4LDQuNDIsMi40MSw2LjA3LDQuMDljMS42NSwxLjY3LDIuODMsMy40NiwzLjUzLDUuMzdsLTUuMjUsMi4zOWMtMS4wMS0yLjQxLTIuNTktNC4zNy00LjczLTUuODctMi4xNC0xLjUtNC43MS0yLjI1LTcuNzEtMi4yNXMtNS43My43Mi04LjA5LDIuMTZjLTIuMzUsMS40NC00LjE5LDMuNDQtNS41Miw2LjAxLTEuMzIsMi41Ny0xLjk4LDUuNTctMS45OCw4Ljk5cy42Niw2LjM2LDEuOTgsOC45M2MxLjMyLDIuNTcsMy4xNiw0LjU3LDUuNTIsNi4wMSwyLjM1LDEuNDQsNS4wNSwyLjE2LDguMDksMi4xNnM1LjU3LS43NSw3LjcxLTIuMjVjMi4xNC0xLjUsMy43Mi0zLjQ1LDQuNzMtNS44N2w1LjI1LDIuMzljLS43LDEuOTEtMS44OCwzLjctMy41Myw1LjM3LTEuNjUsMS42Ny0zLjY4LDMuMDQtNi4wNyw0LjA5cy01LjA5LDEuNTgtOC4wOSwxLjU4WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04NzAuMzEsOTQuMzdjLTMuMDQsMC01Ljc0LS43Mi04LjEyLTIuMTYtMi4zNy0xLjQ0LTQuMjQtMy40Mi01LjYtNS45My0xLjM2LTIuNTEtMi4wNC01LjMyLTIuMDQtOC40NHMuNjctNS45NiwyLjAxLTguNDFjMS4zNC0yLjQ1LDMuMTctNC4zOSw1LjQ5LTUuODEsMi4zMi0xLjQyLDQuOTEtMi4xMyw3Ljc5LTIuMTMsMi4zMywwLDQuNDEuNDIsNi4yMiwxLjI2LDEuODEuODQsMy4zNSwxLjk3LDQuNjEsMy4zOSwxLjI2LDEuNDIsMi4yNCwzLjA0LDIuOTIsNC44NS42OCwxLjgxLDEuMDIsMy42OSwxLjAyLDUuNjMsMCwuNDMtLjAzLjkxLS4wOSwxLjQzcy0uMTMsMS4wMi0uMjEsMS40OWgtMjUuOHYtNC42N2gyMi42NWwtMi41NywyLjFjLjM1LTIuMDIuMTYtMy44My0uNTgtNS40My0uNzQtMS41OS0xLjgzLTIuODYtMy4yNy0zLjc5LTEuNDQtLjkzLTMuMDgtMS40LTQuOS0xLjRzLTMuNS40Ny01LjAyLDEuNGMtMS41Mi45My0yLjcsMi4yNy0zLjUzLDQtLjg0LDEuNzMtMS4xOCwzLjc5LTEuMDIsNi4xNi0uMTYsMi4zLjIsNC4zMSwxLjA4LDYuMDQuODgsMS43MywyLjEyLDMuMDcsMy43NCw0LjAzLDEuNjEuOTUsMy4zOCwxLjQzLDUuMjgsMS40MywyLjEsMCwzLjg3LS40OSw1LjMxLTEuNDYsMS40NC0uOTcsMi42MS0yLjIyLDMuNS0zLjc0bDQuNTUsMi4zM2MtLjYyLDEuNDQtMS41OSwyLjc1LTIuODksMy45NC0xLjMsMS4xOS0yLjg0LDIuMTMtNC42MSwyLjgzLTEuNzcuNy0zLjc1LDEuMDUtNS45MiwxLjA1WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04OTEuNjcsOTMuNjd2LTMxLjQ3aDUuMzF2Ni4xM2wtLjg4LS41M2MuNzgtMS45OSwyLjAzLTMuNTMsMy43Ny00LjY0LDEuNzMtMS4xMSwzLjc3LTEuNjYsNi4xLTEuNjZzNC4yNy41MSw2LjA0LDEuNTJjMS43NywxLjAxLDMuMTcsMi40MSw0LjIsNC4yczEuNTUsMy44MSwxLjU1LDYuMDd2MjAuMzdoLTUuNDl2LTE4LjYyYzAtMS43NS0uMzEtMy4yMy0uOTMtNC40NC0uNjItMS4yMS0xLjUxLTIuMTUtMi42Ni0yLjgzcy0yLjQ2LTEuMDItMy45NC0xLjAyLTIuNzkuMzQtMy45NCwxLjAyYy0xLjE1LjY4LTIuMDUsMS42My0yLjcxLDIuODZzLS45OSwyLjctLjk5LDQuNDF2MTguNjJoLTUuNDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTkzOC4zMSw5NC4wMmMtMy4wOCwwLTUuNDQtLjg4LTcuMDktMi42My0xLjY1LTEuNzUtMi40OC00LjIyLTIuNDgtNy40MXYtMTYuNThoLTUuNzJ2LTUuMmgxLjE3YzEuNCwwLDIuNTEtLjQzLDMuMzMtMS4yOC44Mi0uODYsMS4yMy0xLjk5LDEuMjMtMy4zOXYtMi41N2g1LjQzdjcuMjRoNy4wNnY1LjJoLTcuMDZ2MTYuNGMwLDEuMDUuMTYsMS45Ny41LDIuNzQuMzMuNzguODgsMS4zOSwxLjY2LDEuODQuNzguNDUsMS44MS42NywzLjA5LjY3LjI3LDAsLjYxLS4wMiwxLjAyLS4wNnMuNzktLjA4LDEuMTQtLjEydjQuNzljLS41MS4xMi0xLjA3LjItMS42OS4yNi0uNjIuMDYtMS4xNS4wOS0xLjU4LjA5WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05NDguNjUsOTMuNjd2LTMxLjQ3aDUuMzF2NS43OGwtLjU4LS44MmMuNzQtMS43OSwxLjg3LTMuMTIsMy4zOS00czMuMzctMS4zMSw1LjU1LTEuMzFoMS45M3Y1LjE0aC0yLjc0Yy0yLjIyLDAtNC4wMS42OS01LjM3LDIuMDctMS4zNiwxLjM4LTIuMDQsMy4zNC0yLjA0LDUuODd2MTguNzRoLTUuNDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTk4NC4wMiw5NC4zN2MtMy4wNCwwLTUuNzgtLjcxLTguMjMtMi4xMy0yLjQ1LTEuNDItNC40LTMuMzgtNS44NC01Ljg3LTEuNDQtMi40OS0yLjE2LTUuMzEtMi4xNi04LjQ3cy43MS01Ljk1LDIuMTMtOC40MWMxLjQyLTIuNDUsMy4zNi00LjQsNS44MS01Ljg0LDIuNDUtMS40NCw1LjIxLTIuMTYsOC4yOS0yLjE2czUuNzguNzEsOC4yMywyLjEzYzIuNDUsMS40Miw0LjM5LDMuMzYsNS44MSw1LjgxLDEuNDIsMi40NSwyLjEzLDUuMjcsMi4xMyw4LjQ2cy0uNzQsNi4wMi0yLjIyLDguNDljLTEuNDgsMi40Ny0zLjQ0LDQuNDItNS44Nyw1Ljg0LTIuNDMsMS40Mi01LjEzLDIuMTMtOC4wOCwyLjEzWk05ODQuMDIsODkuMTJjMS45NSwwLDMuNzEtLjQ5LDUuMjgtMS40NnMyLjgyLTIuMzIsMy43NC00LjAzYy45MS0xLjcxLDEuMzctMy42MiwxLjM3LTUuNzJzLS40Ni00LjA0LTEuMzctNS42OS0yLjE2LTIuOTgtMy43NC0zLjk3LTMuMzQtMS40OS01LjI4LTEuNDktMy43Ny41LTUuMzQsMS40OS0yLjgzLDIuMzItMy43NywzLjk3LTEuNCwzLjU1LTEuNCw1LjY5LjQ3LDQuMDEsMS40LDUuNzJjLjkzLDEuNzEsMi4xOSwzLjA2LDMuNzcsNC4wM3MzLjM2LDEuNDYsNS4zNCwxLjQ2WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDMxLjY2LDk0LjM3Yy0yLjk2LDAtNS42Mi0uNzItNy45Ny0yLjE2LTIuMzYtMS40NC00LjIxLTMuNDEtNS41OC01LjktMS4zNi0yLjQ5LTIuMDQtNS4yNy0yLjA0LTguMzVzLjY4LTUuOTYsMi4wNC04LjQ0YzEuMzYtMi40NywzLjIyLTQuNDMsNS41OC01Ljg3LDIuMzUtMS40NCw1LjAxLTIuMTYsNy45Ny0yLjE2LDIuNjEsMCw0LjkyLjU1LDYuOTUsMS42NiwyLjAyLDEuMTEsMy42MiwyLjYsNC43OSw0LjQ3bC0uODgsMS4zNHYtMTkuNWg1LjQ5djQ0LjE5aC01LjMxdi02LjcxbC43LjkzYy0xLjA5LDIuMDYtMi42OCwzLjY2LTQuNzYsNC43OS0yLjA4LDEuMTMtNC40MSwxLjY5LTYuOTgsMS42OVpNMTAzMi4xMyw4OS4xMmMxLjk4LDAsMy43Ni0uNDksNS4zMS0xLjQ2czIuNzktMi4zMSwzLjcxLTRjLjkxLTEuNjksMS4zNy0zLjU5LDEuMzctNS42OXMtLjQ2LTQuMDYtMS4zNy01Ljc1Yy0uOTItMS42OS0yLjE1LTMuMDMtMy43MS00LTEuNTYtLjk3LTMuMzMtMS40Ni01LjMxLTEuNDZzLTMuNzEuNS01LjI4LDEuNDktMi44MSwyLjMyLTMuNzEsMy45N2MtLjksMS42NS0xLjM0LDMuNTctMS4zNCw1Ljc1cy40NSw0LDEuMzQsNS42OWMuODksMS42OSwyLjEyLDMuMDMsMy42OCw0czMuMzMsMS40Niw1LjMxLDEuNDZaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEwNzAuODksOTQuMzdjLTMuMDQsMC01Ljc0LS43Mi04LjEyLTIuMTYtMi4zNy0xLjQ0LTQuMjQtMy40Mi01LjYtNS45My0xLjM2LTIuNTEtMi4wNC01LjMyLTIuMDQtOC40NHMuNjctNS45NiwyLjAxLTguNDFjMS4zNC0yLjQ1LDMuMTctNC4zOSw1LjQ5LTUuODEsMi4zMi0xLjQyLDQuOTEtMi4xMyw3Ljc5LTIuMTMsMi4zMywwLDQuNDEuNDIsNi4yMiwxLjI2LDEuODEuODQsMy4zNSwxLjk3LDQuNjEsMy4zOSwxLjI2LDEuNDIsMi4yNCwzLjA0LDIuOTIsNC44NS42OCwxLjgxLDEuMDIsMy42OSwxLjAyLDUuNjMsMCwuNDMtLjAzLjkxLS4wOSwxLjQzcy0uMTMsMS4wMi0uMjEsMS40OWgtMjUuOHYtNC42N2gyMi42NWwtMi41NywyLjFjLjM1LTIuMDIuMTYtMy44My0uNTgtNS40My0uNzQtMS41OS0xLjgzLTIuODYtMy4yNy0zLjc5LTEuNDQtLjkzLTMuMDgtMS40LTQuOS0xLjRzLTMuNS40Ny01LjAyLDEuNGMtMS41Mi45My0yLjcsMi4yNy0zLjUzLDQtLjg0LDEuNzMtMS4xOCwzLjc5LTEuMDIsNi4xNi0uMTYsMi4zLjIsNC4zMSwxLjA4LDYuMDQuODgsMS43MywyLjEyLDMuMDcsMy43NCw0LjAzLDEuNjEuOTUsMy4zOCwxLjQzLDUuMjgsMS40MywyLjEsMCwzLjg3LS40OSw1LjMxLTEuNDYsMS40NC0uOTcsMi42MS0yLjIyLDMuNS0zLjc0bDQuNTUsMi4zM2MtLjYyLDEuNDQtMS41OSwyLjc1LTIuODksMy45NC0xLjMsMS4xOS0yLjg0LDIuMTMtNC42MSwyLjgzLTEuNzcuNy0zLjc1LDEuMDUtNS45MiwxLjA1WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MTEuNTgsMTYzLjczdi00My40OWg1LjcydjQzLjQ5aC01LjcyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04MjYuMzUsMTYzLjczdi0zMS40N2g1LjMxdjYuMTNsLS44OC0uNTNjLjc4LTEuOTksMi4wMy0zLjUzLDMuNzctNC42NCwxLjczLTEuMTEsMy43Ny0xLjY2LDYuMS0xLjY2czQuMjcuNTEsNi4wNCwxLjUyYzEuNzcsMS4wMSwzLjE3LDIuNDEsNC4yLDQuMiwxLjAzLDEuNzksMS41NSwzLjgxLDEuNTUsNi4wN3YyMC4zN2gtNS40OXYtMTguNjJjMC0xLjc1LS4zMS0zLjIzLS45My00LjQ0LS42Mi0xLjIxLTEuNTEtMi4xNS0yLjY2LTIuODMtMS4xNS0uNjgtMi40Ni0xLjAyLTMuOTQtMS4wMnMtMi43OS4zNC0zLjk0LDEuMDJjLTEuMTUuNjgtMi4wNSwxLjYzLTIuNzEsMi44Ni0uNjYsMS4yMy0uOTksMi43LS45OSw0LjQxdjE4LjYyaC01LjQzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04NjAuMiwxNjMuNzN2LTMxLjQ3aDUuMzF2Ni4xM2wtLjg4LS41M2MuNzgtMS45OSwyLjAzLTMuNTMsMy43Ny00LjY0LDEuNzMtMS4xMSwzLjc3LTEuNjYsNi4xLTEuNjZzNC4yNy41MSw2LjA0LDEuNTJjMS43NywxLjAxLDMuMTcsMi40MSw0LjIsNC4yczEuNTUsMy44MSwxLjU1LDYuMDd2MjAuMzdoLTUuNDl2LTE4LjYyYzAtMS43NS0uMzEtMy4yMy0uOTMtNC40NC0uNjItMS4yMS0xLjUxLTIuMTUtMi42Ni0yLjgzcy0yLjQ2LTEuMDItMy45NC0xLjAyLTIuNzkuMzQtMy45NCwxLjAyYy0xLjE1LjY4LTIuMDUsMS42My0yLjcxLDIuODYtLjY2LDEuMjMtLjk5LDIuNy0uOTksNC40MXYxOC42MmgtNS40M1oiLz4KICAgICAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNOTA5LjAxLDE2NC40M2MtMy4wNCwwLTUuNzgtLjcxLTguMjMtMi4xMy0yLjQ1LTEuNDItNC40LTMuMzgtNS44NC01Ljg3LTEuNDQtMi40OS0yLjE2LTUuMzEtMi4xNi04LjQ3cy43MS01Ljk1LDIuMTMtOC40MSwzLjM2LTQuNCw1LjgxLTUuODRjMi40NS0xLjQ0LDUuMjEtMi4xNiw4LjI5LTIuMTZzNS43OC43MSw4LjIzLDIuMTNjMi40NSwxLjQyLDQuMzksMy4zNiw1LjgxLDUuODEsMS40MiwyLjQ1LDIuMTMsNS4yNywyLjEzLDguNDZzLS43NCw2LjAyLTIuMjIsOC40OWMtMS40OCwyLjQ3LTMuNDMsNC40Mi01Ljg3LDUuODQtMi40MywxLjQyLTUuMTMsMi4xMy04LjA5LDIuMTNaTTkwOS4wMSwxNTkuMTdjMS45NSwwLDMuNzEtLjQ5LDUuMjgtMS40NnMyLjgyLTIuMzIsMy43NC00LjAzYy45MS0xLjcxLDEuMzctMy42MiwxLjM3LTUuNzJzLS40Ni00LjA0LTEuMzctNS42OWMtLjkyLTEuNjUtMi4xNi0yLjk4LTMuNzQtMy45N3MtMy4zNC0xLjQ5LTUuMjgtMS40OS0zLjc3LjUtNS4zNCwxLjQ5LTIuODMsMi4zMi0zLjc3LDMuOTctMS40LDMuNTUtMS40LDUuNjkuNDcsNC4wMSwxLjQsNS43MmMuOTMsMS43MSwyLjE5LDMuMDYsMy43Nyw0LjAzczMuMzYsMS40Niw1LjM0LDEuNDZaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTk0MC40MiwxNjMuNzNsLTEyLjMyLTMxLjQ3aDYuMDdsOS44NywyNi42MmgtMi4xbDkuOTItMjYuNjJoNi4wN2wtMTIuMzgsMzEuNDdoLTUuMTRaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTk3MC44MywxNjQuNDNjLTIuMDYsMC0zLjg4LS4zOC01LjQ2LTEuMTRzLTIuODEtMS44MS0zLjcxLTMuMTVjLS45LTEuMzQtMS4zNC0yLjg5LTEuMzQtNC42NHMuMzYtMy4xOCwxLjA4LTQuNTJjLjcyLTEuMzQsMS44NS0yLjQ4LDMuMzktMy40MiwxLjU0LS45MywzLjQ3LTEuNiw1LjgxLTEuOTlsMTEuNjgtMS45M3Y0LjU1bC0xMC40NSwxLjc1Yy0yLjAyLjM1LTMuNDkuOTktNC40MSwxLjkzLS45Mi45My0xLjM3LDIuMDgtMS4zNywzLjQ0LDAsMS4yOC41MiwyLjM1LDEuNTUsMy4yMXMyLjMzLDEuMjgsMy44OCwxLjI4YzEuOTgsMCwzLjcxLS40Miw1LjE3LTEuMjYsMS40Ni0uODQsMi42MS0xLjk3LDMuNDUtMy40Mi44NC0xLjQ0LDEuMjUtMy4wNCwxLjI1LTQuNzl2LThjMC0xLjcxLS42My0zLjEtMS45LTQuMTctMS4yNy0xLjA3LTIuOTMtMS42MS00Ljk5LTEuNjEtMS43OSwwLTMuMzguNDYtNC43NiwxLjM3LTEuMzguOTItMi40LDIuMTMtMy4wNiwzLjY1bC00LjczLTIuNDVjLjU4LTEuNDQsMS41Mi0yLjczLDIuOC0zLjg4LDEuMjgtMS4xNSwyLjc4LTIuMDUsNC40OS0yLjcxczMuNS0uOTksNS4zNy0uOTljMi40MSwwLDQuNTMuNDYsNi4zNiwxLjM3LDEuODMuOTIsMy4yNiwyLjE4LDQuMjksMy43OSwxLjAzLDEuNjIsMS41NSwzLjQ5LDEuNTUsNS42M3YyMS4zN2gtNS4zMXYtNS45NmwuOTkuMzVjLS42NiwxLjI1LTEuNTYsMi4zMy0yLjY5LDMuMjctMS4xMy45My0yLjQ1LDEuNjctMy45NywyLjIyLTEuNTIuNTQtMy4xNy44Mi00Ljk2LjgyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDA5Ljc3LDE2NC40M2MtMy4wOCwwLTUuODEtLjcyLTguMi0yLjE2cy00LjI3LTMuNDEtNS42My01LjljLTEuMzYtMi40OS0yLjA0LTUuMjktMi4wNC04LjQxcy42OC01Ljk1LDIuMDQtOC40MWMxLjM2LTIuNDUsMy4yNC00LjQsNS42My01Ljg0LDIuMzktMS40NCw1LjEzLTIuMTYsOC4yLTIuMTYsMi4wNiwwLDMuOTkuMzcsNS43OCwxLjExLDEuNzkuNzQsMy4zNywxLjczLDQuNzMsMi45OCwxLjM2LDEuMjUsMi4zNSwyLjcxLDIuOTgsNC4zOGwtNC44NSwyLjM0Yy0uNzQtMS42My0xLjg3LTIuOTctMy4zOC00LTEuNTItMS4wMy0zLjI3LTEuNTUtNS4yNS0xLjU1cy0zLjYzLjQ5LTUuMTcsMS40NmMtMS41NC45Ny0yLjc1LDIuMy0zLjY1LDMuOTctLjksMS42Ny0xLjM0LDMuNi0xLjM0LDUuNzhzLjQ1LDQsMS4zNCw1LjY5Yy44OSwxLjY5LDIuMTEsMy4wMywzLjY1LDRzMy4yNiwxLjQ2LDUuMTcsMS40NiwzLjc0LS41Miw1LjI1LTEuNTVjMS41Mi0xLjAzLDIuNjUtMi40LDMuMzgtNC4xMmw0Ljg1LDIuNDVjLS42MiwxLjYzLTEuNjIsMy4wOC0yLjk4LDQuMzUtMS4zNiwxLjI2LTIuOTQsMi4yNy00LjczLDMuMDEtMS43OS43NC0zLjcyLDEuMTEtNS43OCwxLjExWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDMwLjM4LDEyNy4yNHYtNy4wMWg1LjQzdjcuMDFoLTUuNDNaTTEwMzAuMzgsMTYzLjczdi0zMS40N2g1LjQzdjMxLjQ3aC01LjQzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMDU5LjE2LDE2NC40M2MtMy4wNCwwLTUuNzgtLjcxLTguMjMtMi4xMy0yLjQ1LTEuNDItNC40LTMuMzgtNS44NC01Ljg3LTEuNDQtMi40OS0yLjE2LTUuMzEtMi4xNi04LjQ3cy43MS01Ljk1LDIuMTMtOC40MWMxLjQyLTIuNDUsMy4zNi00LjQsNS44MS01Ljg0LDIuNDUtMS40NCw1LjIxLTIuMTYsOC4yOS0yLjE2czUuNzguNzEsOC4yMywyLjEzYzIuNDUsMS40Miw0LjM5LDMuMzYsNS44MSw1LjgxLDEuNDIsMi40NSwyLjEzLDUuMjcsMi4xMyw4LjQ2cy0uNzQsNi4wMi0yLjIyLDguNDljLTEuNDgsMi40Ny0zLjQ0LDQuNDItNS44Nyw1Ljg0LTIuNDMsMS40Mi01LjEzLDIuMTMtOC4wOCwyLjEzWk0xMDU5LjE2LDE1OS4xN2MxLjk1LDAsMy43MS0uNDksNS4yOC0xLjQ2czIuODItMi4zMiwzLjc0LTQuMDNjLjkxLTEuNzEsMS4zNy0zLjYyLDEuMzctNS43MnMtLjQ2LTQuMDQtMS4zNy01LjY5LTIuMTYtMi45OC0zLjc0LTMuOTctMy4zNC0xLjQ5LTUuMjgtMS40OS0zLjc3LjUtNS4zNCwxLjQ5LTIuODMsMi4zMi0zLjc3LDMuOTctMS40LDMuNTUtMS40LDUuNjkuNDcsNC4wMSwxLjQsNS43MmMuOTMsMS43MSwyLjE5LDMuMDYsMy43Nyw0LjAzczMuMzYsMS40Niw1LjM0LDEuNDZaTTEwNTYuNDEsMTI2LjM2bDQuNjEtOS4yMmg3LjM2bC02LjU0LDkuMjJoLTUuNDNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEwODIuMzksMTYzLjczdi0zMS40N2g1LjMxdjYuMTNsLS44OC0uNTNjLjc4LTEuOTksMi4wMy0zLjUzLDMuNzctNC42NCwxLjczLTEuMTEsMy43Ny0xLjY2LDYuMS0xLjY2czQuMjcuNTEsNi4wNCwxLjUyYzEuNzcsMS4wMSwzLjE3LDIuNDEsNC4yLDQuMnMxLjU1LDMuODEsMS41NSw2LjA3djIwLjM3aC01LjQ5di0xOC42MmMwLTEuNzUtLjMxLTMuMjMtLjkzLTQuNDQtLjYyLTEuMjEtMS41MS0yLjE1LTIuNjYtMi44M3MtMi40Ni0xLjAyLTMuOTQtMS4wMi0yLjc5LjM0LTMuOTQsMS4wMmMtMS4xNS42OC0yLjA1LDEuNjMtMi43MSwyLjg2cy0uOTksMi43LS45OSw0LjQxdjE4LjYyaC01LjQzWiIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=" alt="INNLAB" style="height:22px;opacity:.7">
+    <span class="report-footer__info">Programa de Formación IA · Laboratorio de Innovación ACH Colombia · 2026 · Virtual Sincrónico Remoto</span>
+    <span class="report-footer__url">icesi.edu.co</span>
+  </div>
+
+</div><!-- /reporte -->
+</body>
+</html>
