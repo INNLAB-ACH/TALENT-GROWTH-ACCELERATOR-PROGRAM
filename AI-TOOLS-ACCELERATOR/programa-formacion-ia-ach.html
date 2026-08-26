@@ -203,8 +203,8 @@
                 <td>5</td>
                 <td>Desarrollo</td>
                 <td>Desarrollo asistido por IA con BMad Method</td>
-                <td class="num">4</td>
-                <td class="num">8h</td>
+                <td class="num">5</td>
+                <td class="num">10h</td>
                 <td>BMAD · Claude Code · Cursor · GitHub · Azure DevOps</td>
                 <td>Juan Carlos Muñoz</td>
               </tr>
@@ -221,8 +221,8 @@
                 <td>7</td>
                 <td>Analítica</td>
                 <td>Comportamiento real en producción</td>
-                <td class="num">2</td>
-                <td class="num">4h</td>
+                <td class="num">1</td>
+                <td class="num">2h</td>
                 <td>MS Clarity · PostHog · PostHog AI · Copilot</td>
                 <td>Juan Carlos Muñoz</td>
               </tr>
@@ -455,42 +455,57 @@
                   <div class="sesion-titulo">Contexto técnico del codebase y arquitectura Spec-First</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
                 </div>
-                <div class="sesion-objetivo">Configurar las reglas técnicas del repositorio (project-context.md,
-                  CLAUDE.md y AGENTS.md para el stack del laboratorio) y definir las invariantes técnicas de
-                  arquitectura (bmad-spec) antes de tocar código.</div>
-                <div class="sesion-tools">BMAD Claude Code · GitHub</div>
+                <div class="sesion-objetivo">Configurar las reglas técnicas del repositorio (estándares y reglas para el
+                  stack del laboratorio) y definir las capacidades e invariantes técnicas de arquitectura (bmad-spec y
+                  bmad-architecture) antes de tocar código o tomar un código existente para entenderlo
+                  (bmad-document-project).</div>
+                <div class="sesion-tools">BMAD · Claude Code · GitHub</div>
               </div>
               <div class="sesion-row">
                 <div class="sesion-num" style="background:#0D47A1">12</div>
                 <div>
-                  <div class="sesion-titulo">Ingesta del backlog con Azure DevOps MCP y planificación de código</div>
+                  <div class="sesion-titulo">Generación de PRD, Validación de Madurez y Desglose de Historias</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
                 </div>
-                <div class="sesion-objetivo">Conectar la IA a Azure DevOps mediante el Azure DevOps MCP para consumir la
-                  Historia de Usuario creada en el Módulo 3, transformar los criterios Gherkin en un plan ejecutable de
-                  desarrollo (bmad-create-story) </div>
-                <div class="sesion-tools">BMAD Claude Code · Claude Sonnet · Azure DevOps</div>
+                <div class="sesion-objetivo">Derivar el Product Requirements Document (bmad-prd) a partir de las
+                  Capabilities del SPEC, validaándolo (bmad-validate-prd) y desglosando épicas e historias de usuario
+                  con criterios de aceptación
+                  estructurados y validados (bmad-create-epics-and-stories). Usar bmad-check-implementation-readiness
+                  para auditar que el PRD, las
+                  épicas y la arquitectura </div>
+                <div class="sesion-tools">BMAD · Claude Code · Claude Sonnet · Azure DevOps</div>
               </div>
               <div class="sesion-row">
                 <div class="sesion-num" style="background:#0D47A1">13</div>
+                <div>
+                  <div class="sesion-titulo">Planificación de código con historias técnicas detalladas</div>
+                  <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
+                </div>
+                <div class="sesion-objetivo">Transformar el requerimiento de negocio en el artefacto ejecutable por la
+                  ia que permita la generación automática de código (bmad-create-story).</div>
+                <div class="sesion-tools">BMAD Claude Code · Claude Sonnet · Azure DevOps</div>
+              </div>
+              <div class="sesion-row">
+                <div class="sesion-num" style="background:#0D47A1">14</div>
                 <div>
                   <div class="sesion-titulo">Implementación asistida por agentes</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
                 </div>
                 <div class="sesion-objetivo">Desarrollar el código de la historia de usuario usando el agente
-                  desarrollador de BMad (bmad-dev-story / bmad-quick-dev), combinando la ejecución acelerada en CLI con
-                  Claude Code y la edición precisa en el IDE.</div>
+                  desarrollador de BMad (bmad-dev-story / bmad-quick-dev). Usar bmad-correct-course para re-orientar la
+                  ejecución del agente sin perder el trabajo realizado ni corromper el contexto.</div>
                 <div class="sesion-tools">BMAD · Claude Code · Cursor · GitHub</div>
               </div>
               <div class="sesion-row">
-                <div class="sesion-num" style="background:#0D47A1">14</div>
+                <div class="sesion-num" style="background:#0D47A1">15</div>
                 <div>
                   <div class="sesion-titulo">Quality Gates de desarrollo, Code Review Adversarial y PR</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
                 </div>
                 <div class="sesion-objetivo">Someter el código a revisión técnica multicapa con los cazadores de BMad
-                  (bmad-code-review: Edge Case Hunter y Blind Hunter), resolver hallazgos, emitir el PR en GitHub y
-                  actualizar automáticamente el estado del Work Item en Azure DevOps vía MCP.</div>
+                  (bmad-code-review: Edge Case Hunter y Blind Hunter), resolver hallazgos, incluir revisión humana
+                  (mad-checkpoint-preview), emitir el PR en GitHub y actualizar automáticamente el estado del Work Item
+                  en Azure DevOps vía MCP.</div>
                 <div class="sesion-tools">BMAD · Claude Code · Azure DevOps · GitHub</div>
               </div>
             </div>
@@ -509,7 +524,7 @@
             <div class="modulo-body" style="background:#F3E5F510;">
 
               <div class="sesion-row">
-                <div class="sesion-num" style="background:#6A1B9A">15</div>
+                <div class="sesion-num" style="background:#6A1B9A">16</div>
                 <div>
                   <div class="sesion-titulo">Playwright + Claude Code + BMad TEA: Tests E2E desde historias</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
@@ -520,7 +535,7 @@
                 <div class="sesion-tools">Playwright · Claude Code · GitHub</div>
               </div>
               <div class="sesion-row">
-                <div class="sesion-num" style="background:#6A1B9A">16</div>
+                <div class="sesion-num" style="background:#6A1B9A">17</div>
                 <div>
                   <div class="sesion-titulo">CI/CD con Azure Pipelines: pipeline automatizado</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
@@ -540,29 +555,22 @@
               <div style="flex:1;margin-left:16px">
                 <span style="font-size:13px;opacity:.8">Comportamiento real en producción</span>
               </div>
-              <div class="modulo-header__badge">2 sesiónes · 4h</div>
+              <div class="modulo-header__badge">1 sesión · 2h</div>
             </div>
             <div class="modulo-body" style="background:#E0F2F110;">
 
               <div class="sesion-row">
-                <div class="sesion-num" style="background:#00695C">17</div>
-                <div>
-                  <div class="sesion-titulo">MS Clarity: comportamiento real integrado al ecosistema MS</div>
-                  <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
-                </div>
-                <div class="sesion-objetivo">Instalar y operar MS Clarity sobre un ambiente de pruebas ACH para analizar
-                  el comportamiento real de usuarios en flujos de pago, apoyados por Copilot.</div>
-                <div class="sesion-tools">MS Clarity · Microsoft Teams · Copilot (Clarity)</div>
-              </div>
-              <div class="sesion-row">
                 <div class="sesion-num" style="background:#00695C">18</div>
                 <div>
-                  <div class="sesion-titulo">PostHog: product analytics con IA para pagos</div>
+                  <div class="sesion-titulo">MS Clarity: comportamiento real integrado y PostHog: product analytics con
+                    IA para pagos</div>
                   <span class="text-xs text-muted">2h · Juan Carlos Muñoz</span>
                 </div>
-                <div class="sesion-objetivo">Instrumentar eventos clave de un producto ACH en PostHog, construir funnels
-                  de conversión y usar PostHog AI para responder preguntas de negocio en lenguaje natural.</div>
-                <div class="sesion-tools">PostHog · PostHog AI</div>
+                <div class="sesion-objetivo">Analizar con MS Clarity el comportamiento real de usuarios en flujos de
+                  pago de prueba, apoyados por Copilot. Instrumentar eventos clave de un producto ACH en PostHog,
+                  construir funnels de conversión y usar PostHog AI para
+                  responder preguntas de negocio en lenguaje natural.</div>
+                <div class="sesion-tools">MS Clarity · Microsoft Teams · Copilot (Clarity)</div>
               </div>
             </div>
           </div>
